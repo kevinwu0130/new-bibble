@@ -7,6 +7,11 @@ compatibility_date = "2026-01-01"
 [ai]
 binding = "AI"
 
+# KV：章節插圖永久儲存（生成一次、全球共用）
+[[kv_namespaces]]
+binding = "ILLUSTRATIONS"
+id = "9803a70757e94a398648de5fd5cd233a"
+
 # 之後若需要 D1 資料庫，範例：
 # [[d1_databases]]
 # binding = "DB"
