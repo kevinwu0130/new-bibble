@@ -26,8 +26,36 @@ export async function onRequestGet(context) {
   // 以固定 URL 作為快取鍵，同一章全站共用同一張圖
   const cache = caches.default
   const cacheKey = new Request(`https://cache.new-bibble.internal/illustration/${book}/${chapter}`)
+  const kvKey = `${book}/${chapter}`
+
   const hit = await cache.match(cacheKey)
-  if (hit) return hit
+  if (hit) {
+    // KV 綁定後，把先前只存在邊緣快取的圖回填成永久儲存
+    if (env.ILLUSTRATIONS) {
+      const backfill = hit.clone()
+      context.waitUntil(
+        (async () => {
+          const exists = await env.ILLUSTRATIONS.get(kvKey, 'stream')
+          if (!exists) await env.ILLUSTRATIONS.put(kvKey, await backfill.arrayBuffer())
+        })(),
+      )
+    }
+    return hit
+  }
+  const imageHeaders = {
+    'Content-Type': 'image/jpeg',
+    'Cache-Control': 'public, max-age=31536000, immutable',
+  }
+
+  // KV 命中：永久儲存的圖直接回傳（並回填邊緣快取）
+  if (env.ILLUSTRATIONS) {
+    const stored = await env.ILLUSTRATIONS.get(kvKey, 'arrayBuffer')
+    if (stored) {
+      const res = new Response(stored, { headers: imageHeaders })
+      context.waitUntil(cache.put(cacheKey, res.clone()))
+      return res
+    }
+  }
 
   const kvKey = `${book}/${chapter}`
   const imageHeaders = {
