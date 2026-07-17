@@ -57,22 +57,6 @@ export async function onRequestGet(context) {
     }
   }
 
-  const kvKey = `${book}/${chapter}`
-  const imageHeaders = {
-    'Content-Type': 'image/jpeg',
-    'Cache-Control': 'public, max-age=31536000, immutable',
-  }
-
-  // KV 命中：永久儲存的圖直接回傳（並回填邊緣快取）
-  if (env.ILLUSTRATIONS) {
-    const stored = await env.ILLUSTRATIONS.get(kvKey, 'arrayBuffer')
-    if (stored) {
-      const res = new Response(stored, { headers: imageHeaders })
-      context.waitUntil(cache.put(cacheKey, res.clone()))
-      return res
-    }
-  }
-
   // 1) 讓 LLM 描述本章最具代表性的場景（英文 prompt 對圖像模型效果較好）
   let prompt =
     `Ancient Near-Eastern biblical scene from the book of ${book}, chapter ${chapter}, ` +
