@@ -1,0 +1,22 @@
+name: Warm AI illustrations
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *' # 每日跑一次，免費額度用盡會自動停，隔日續跑
+
+jobs:
+  warm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Warm all chapter illustrations
+        run: node .github/scripts/warm-illustrations.mjs
+        env:
+          BASE_URL: https://new-bibble.pages.dev

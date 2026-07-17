@@ -1,0 +1,173 @@
+{
+  "bookId": "revelation",
+  "chapter": 1,
+  "titleZh": "拔摩島異象與七教會",
+  "period": {
+    "id": "roman_domitian",
+    "name": "羅馬帝國 - 多米田年代",
+    "yearRange": [
+      90,
+      96
+    ],
+    "mapCenter": [
+      27.8,
+      38.2
+    ],
+    "mapZoom": 6.3
+  },
+  "note": "七教會沿古代郵路順時針排列——書信的順序（1:11）正是送信人的行進路線，從以弗所出發繞行一圈。",
+  "highlights": {
+    "1": [
+      {
+        "anchorText": "約翰",
+        "entityId": "john"
+      }
+    ],
+    "9": [
+      {
+        "anchorText": "拔摩",
+        "entityId": "patmos"
+      }
+    ],
+    "11": [
+      {
+        "anchorText": "以弗所",
+        "entityId": "ephesus"
+      },
+      {
+        "anchorText": "士每拿",
+        "entityId": "smyrna"
+      },
+      {
+        "anchorText": "別迦摩",
+        "entityId": "pergamum"
+      },
+      {
+        "anchorText": "推雅推喇",
+        "entityId": "thyatira"
+      },
+      {
+        "anchorText": "撒狄",
+        "entityId": "sardis"
+      },
+      {
+        "anchorText": "非拉鐵非",
+        "entityId": "philadelphia"
+      },
+      {
+        "anchorText": "老底嘉",
+        "entityId": "laodicea"
+      }
+    ]
+  },
+  "entities": {
+    "john": {
+      "name": "約翰",
+      "type": "person",
+      "lat": 37.31,
+      "lng": 26.55
+    },
+    "patmos": {
+      "name": "拔摩海島",
+      "type": "place",
+      "lat": 37.31,
+      "lng": 26.55
+    },
+    "ephesus": {
+      "name": "以弗所",
+      "type": "place",
+      "lat": 37.94,
+      "lng": 27.34
+    },
+    "smyrna": {
+      "name": "士每拿（今伊茲密爾）",
+      "type": "place",
+      "lat": 38.42,
+      "lng": 27.14
+    },
+    "pergamum": {
+      "name": "別迦摩",
+      "type": "place",
+      "lat": 39.13,
+      "lng": 27.18
+    },
+    "thyatira": {
+      "name": "推雅推喇",
+      "type": "place",
+      "lat": 38.92,
+      "lng": 27.84
+    },
+    "sardis": {
+      "name": "撒狄",
+      "type": "place",
+      "lat": 38.49,
+      "lng": 28.04
+    },
+    "philadelphia": {
+      "name": "非拉鐵非",
+      "type": "place",
+      "lat": 38.35,
+      "lng": 28.51
+    },
+    "laodicea": {
+      "name": "老底嘉",
+      "type": "place",
+      "lat": 37.84,
+      "lng": 29.11
+    }
+  },
+  "route": {
+    "id": "seven_churches_circuit",
+    "label": "七教會郵路（順時針）",
+    "path": [
+      {
+        "name": "拔摩",
+        "lat": 37.31,
+        "lng": 26.55,
+        "verseAnchor": 9
+      },
+      {
+        "name": "以弗所",
+        "lat": 37.94,
+        "lng": 27.34,
+        "verseAnchor": 11
+      },
+      {
+        "name": "士每拿",
+        "lat": 38.42,
+        "lng": 27.14,
+        "verseAnchor": 11
+      },
+      {
+        "name": "別迦摩",
+        "lat": 39.13,
+        "lng": 27.18,
+        "verseAnchor": 11
+      },
+      {
+        "name": "推雅推喇",
+        "lat": 38.92,
+        "lng": 27.84,
+        "verseAnchor": 11
+      },
+      {
+        "name": "撒狄",
+        "lat": 38.49,
+        "lng": 28.04,
+        "verseAnchor": 11
+      },
+      {
+        "name": "非拉鐵非",
+        "lat": 38.35,
+        "lng": 28.51,
+        "verseAnchor": 11
+      },
+      {
+        "name": "老底嘉",
+        "lat": 37.84,
+        "lng": 29.11,
+        "verseAnchor": 11
+      }
+    ]
+  }
+}

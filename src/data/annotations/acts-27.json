@@ -1,0 +1,227 @@
+{
+  "bookId": "acts",
+  "chapter": 27,
+  "titleZh": "保羅航向羅馬：風暴與船難",
+  "period": {
+    "id": "roman_empire_paul_rome",
+    "name": "羅馬帝國 - 保羅赴羅馬",
+    "yearRange": [
+      59,
+      62
+    ],
+    "mapCenter": [
+      26,
+      35.2
+    ],
+    "mapZoom": 4.6
+  },
+  "note": "聖經中最詳細的航海記錄。狂風「友拉革羅」把船從革哩底吹入亞底亞海，漂流十四天後在米利大（馬爾他）擱淺，全船 276 人無一喪命。",
+  "highlights": {
+    "3": [
+      {
+        "anchorText": "西頓",
+        "entityId": "sidon"
+      }
+    ],
+    "4": [
+      {
+        "anchorText": "居比路",
+        "entityId": "cyprus"
+      }
+    ],
+    "5": [
+      {
+        "anchorText": "每拉",
+        "entityId": "myra"
+      }
+    ],
+    "7": [
+      {
+        "anchorText": "革尼土",
+        "entityId": "cnidus"
+      },
+      {
+        "anchorText": "革哩底",
+        "entityId": "crete"
+      },
+      {
+        "anchorText": "撒摩尼",
+        "entityId": "salmone"
+      }
+    ],
+    "8": [
+      {
+        "anchorText": "佳澳",
+        "entityId": "fair_havens"
+      },
+      {
+        "anchorText": "拉西亞",
+        "entityId": "lasea"
+      }
+    ],
+    "12": [
+      {
+        "anchorText": "非尼基",
+        "entityId": "phoenix"
+      }
+    ],
+    "16": [
+      {
+        "anchorText": "高大",
+        "entityId": "cauda"
+      }
+    ],
+    "27": [
+      {
+        "anchorText": "亞底亞海",
+        "entityId": "adria"
+      }
+    ]
+  },
+  "entities": {
+    "paul": {
+      "name": "保羅",
+      "type": "person",
+      "lat": 32.5,
+      "lng": 34.892
+    },
+    "caesarea": {
+      "name": "該撒利亞（啟航港）",
+      "type": "place",
+      "lat": 32.5,
+      "lng": 34.892
+    },
+    "sidon": {
+      "name": "西頓",
+      "type": "place",
+      "lat": 33.56,
+      "lng": 35.37
+    },
+    "cyprus": {
+      "name": "居比路（背風岸）",
+      "type": "place",
+      "lat": 35.1,
+      "lng": 33.4
+    },
+    "myra": {
+      "name": "每拉（換船）",
+      "type": "place",
+      "lat": 36.26,
+      "lng": 29.98
+    },
+    "cnidus": {
+      "name": "革尼土",
+      "type": "place",
+      "lat": 36.685,
+      "lng": 27.375
+    },
+    "crete": {
+      "name": "革哩底（克里特島）",
+      "type": "place",
+      "lat": 35.24,
+      "lng": 24.9
+    },
+    "salmone": {
+      "name": "撒摩尼",
+      "type": "place",
+      "lat": 35.3,
+      "lng": 26.3
+    },
+    "fair_havens": {
+      "name": "佳澳",
+      "type": "place",
+      "lat": 34.92,
+      "lng": 24.73
+    },
+    "lasea": {
+      "name": "拉西亞",
+      "type": "place",
+      "lat": 34.93,
+      "lng": 24.87
+    },
+    "phoenix": {
+      "name": "非尼基（原定過冬港）",
+      "type": "place",
+      "lat": 35.2,
+      "lng": 24.08
+    },
+    "cauda": {
+      "name": "高大島",
+      "type": "place",
+      "lat": 34.84,
+      "lng": 24.08
+    },
+    "adria": {
+      "name": "亞底亞海（漂流十四天）",
+      "type": "place",
+      "lat": 36,
+      "lng": 19
+    }
+  },
+  "route": {
+    "id": "paul_voyage_to_rome_1",
+    "label": "該撒利亞 → 船難（米利大外海）",
+    "path": [
+      {
+        "name": "該撒利亞",
+        "lat": 32.5,
+        "lng": 34.892,
+        "verseAnchor": 1
+      },
+      {
+        "name": "西頓",
+        "lat": 33.56,
+        "lng": 35.37,
+        "verseAnchor": 3
+      },
+      {
+        "name": "居比路背風岸",
+        "lat": 35.3,
+        "lng": 33.6,
+        "verseAnchor": 4
+      },
+      {
+        "name": "每拉",
+        "lat": 36.26,
+        "lng": 29.98,
+        "verseAnchor": 5
+      },
+      {
+        "name": "革尼土對面",
+        "lat": 36.6,
+        "lng": 27.4,
+        "verseAnchor": 7
+      },
+      {
+        "name": "撒摩尼",
+        "lat": 35.3,
+        "lng": 26.3,
+        "verseAnchor": 7
+      },
+      {
+        "name": "佳澳",
+        "lat": 34.92,
+        "lng": 24.73,
+        "verseAnchor": 8
+      },
+      {
+        "name": "高大島",
+        "lat": 34.84,
+        "lng": 24.08,
+        "verseAnchor": 16
+      },
+      {
+        "name": "亞底亞海漂流",
+        "lat": 36,
+        "lng": 19,
+        "verseAnchor": 27
+      },
+      {
+        "name": "米利大外海擱淺",
+        "lat": 35.95,
+        "lng": 14.55,
+        "verseAnchor": 41
+      }
+    ]
+  }
+}

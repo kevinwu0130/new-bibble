@@ -1,0 +1,81 @@
+{
+  "bookId": "luke",
+  "chapter": 10,
+  "titleZh": "好撒馬利亞人的比喻",
+  "period": {
+    "id": "jesus_ministry",
+    "name": "耶穌事工時期",
+    "yearRange": [
+      27,
+      30
+    ],
+    "mapCenter": [
+      35.34,
+      31.83
+    ],
+    "mapZoom": 10
+  },
+  "note": "「從耶路撒冷下耶利哥」：27 公里內海拔驟降約 1,000 公尺，荒涼峽谷正是強盜出沒之地——比喻的舞台就是這條路。客店為傳統遺址（Inn of the Good Samaritan）。",
+  "highlights": {
+    "30": [
+      {
+        "anchorText": "耶路撒冷",
+        "entityId": "jerusalem"
+      },
+      {
+        "anchorText": "耶利哥",
+        "entityId": "jericho"
+      }
+    ],
+    "34": [
+      {
+        "anchorText": "店裡",
+        "entityId": "samaritan_inn"
+      }
+    ]
+  },
+  "entities": {
+    "jerusalem": {
+      "name": "耶路撒冷（海拔約 +760m）",
+      "type": "place",
+      "lat": 31.778,
+      "lng": 35.235
+    },
+    "jericho": {
+      "name": "耶利哥（海拔約 -250m）",
+      "type": "place",
+      "lat": 31.871,
+      "lng": 35.444
+    },
+    "samaritan_inn": {
+      "name": "好撒馬利亞人客店（傳統遺址）",
+      "type": "place",
+      "lat": 31.816,
+      "lng": 35.359
+    }
+  },
+  "route": {
+    "id": "jerusalem_jericho_road",
+    "label": "耶路撒冷下耶利哥的路",
+    "path": [
+      {
+        "name": "耶路撒冷",
+        "lat": 31.778,
+        "lng": 35.235,
+        "verseAnchor": 30
+      },
+      {
+        "name": "客店（傳統遺址）",
+        "lat": 31.816,
+        "lng": 35.359,
+        "verseAnchor": 34
+      },
+      {
+        "name": "耶利哥",
+        "lat": 31.871,
+        "lng": 35.444,
+        "verseAnchor": 30
+      }
+    ]
+  }
+}

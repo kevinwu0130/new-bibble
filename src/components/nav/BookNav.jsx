@@ -62,7 +62,11 @@ export default function BookNav() {
 
       <div className="flex gap-2 items-center flex-wrap">
         <span className="text-xs text-gray-400">地圖章節：</span>
-        {Object.values(ANNOTATIONS).map((a) => {
+        {Object.values(ANNOTATIONS)
+          .sort((a, b) =>
+            getBookMeta(a.bookId).order - getBookMeta(b.bookId).order || a.chapter - b.chapter
+          )
+          .map((a) => {
           const bookMeta = getBookMeta(a.bookId)
           const isActive = a.bookId === activeBookId && a.chapter === activeChapter
           return (

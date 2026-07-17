@@ -1,0 +1,191 @@
+{
+  "bookId": "1-samuel",
+  "chapter": 17,
+  "titleZh": "大衛與歌利亞：以拉谷之戰",
+  "period": {
+    "id": "united_monarchy",
+    "name": "掃羅王時期",
+    "yearRange": [
+      -1025,
+      -1010
+    ],
+    "mapCenter": [
+      34.95,
+      31.72
+    ],
+    "mapZoom": 9.5
+  },
+  "note": "兩軍隔以拉谷對峙：非利士人在梭哥與亞西加之間，以色列人在對面山上——地形就是戰局。大衛勝後以色列人沿沙拉音路追擊至迦特與以革倫城門。",
+  "highlights": {
+    "1": [
+      {
+        "anchorText": "梭哥",
+        "entityId": "socoh"
+      },
+      {
+        "anchorText": "亞西加",
+        "entityId": "azekah"
+      },
+      {
+        "anchorText": "以弗大憫",
+        "entityId": "ephes_dammim"
+      }
+    ],
+    "2": [
+      {
+        "anchorText": "以拉谷",
+        "entityId": "elah_valley"
+      }
+    ],
+    "4": [
+      {
+        "anchorText": "歌利亞",
+        "entityId": "goliath"
+      },
+      {
+        "anchorText": "迦特",
+        "entityId": "gath"
+      }
+    ],
+    "12": [
+      {
+        "anchorText": "大衛",
+        "entityId": "david"
+      },
+      {
+        "anchorText": "伯利恆",
+        "entityId": "bethlehem"
+      }
+    ],
+    "19": [
+      {
+        "anchorText": "以拉谷",
+        "entityId": "elah_valley"
+      }
+    ],
+    "40": [
+      {
+        "anchorText": "溪中",
+        "entityId": "elah_brook"
+      }
+    ],
+    "52": [
+      {
+        "anchorText": "迦特",
+        "entityId": "gath"
+      },
+      {
+        "anchorText": "以革倫",
+        "entityId": "ekron"
+      },
+      {
+        "anchorText": "沙拉音",
+        "entityId": "shaaraim"
+      }
+    ]
+  },
+  "entities": {
+    "david": {
+      "name": "大衛",
+      "type": "person",
+      "lat": 31.705,
+      "lng": 35.203
+    },
+    "goliath": {
+      "name": "歌利亞",
+      "type": "person",
+      "lat": 31.7,
+      "lng": 34.847
+    },
+    "socoh": {
+      "name": "梭哥",
+      "type": "place",
+      "lat": 31.674,
+      "lng": 34.972
+    },
+    "azekah": {
+      "name": "亞西加",
+      "type": "place",
+      "lat": 31.7,
+      "lng": 34.936
+    },
+    "ephes_dammim": {
+      "name": "以弗大憫（非利士軍營）",
+      "type": "place",
+      "lat": 31.69,
+      "lng": 34.952
+    },
+    "elah_valley": {
+      "name": "以拉谷（以色列軍營）",
+      "type": "place",
+      "lat": 31.691,
+      "lng": 34.968
+    },
+    "elah_brook": {
+      "name": "以拉溪（五塊石子）",
+      "type": "place",
+      "lat": 31.689,
+      "lng": 34.96
+    },
+    "bethlehem": {
+      "name": "伯利恆（大衛的家）",
+      "type": "place",
+      "lat": 31.705,
+      "lng": 35.203
+    },
+    "gath": {
+      "name": "迦特（歌利亞的家鄉）",
+      "type": "place",
+      "lat": 31.7,
+      "lng": 34.847
+    },
+    "ekron": {
+      "name": "以革倫",
+      "type": "place",
+      "lat": 31.78,
+      "lng": 34.85
+    },
+    "shaaraim": {
+      "name": "沙拉音（追擊路）",
+      "type": "place",
+      "lat": 31.7,
+      "lng": 34.91
+    }
+  },
+  "route": {
+    "id": "elah_valley_battle",
+    "label": "伯利恆 → 以拉谷 → 追擊至迦特、以革倫",
+    "path": [
+      {
+        "name": "伯利恆",
+        "lat": 31.705,
+        "lng": 35.203,
+        "verseAnchor": 15
+      },
+      {
+        "name": "以拉谷戰場",
+        "lat": 31.691,
+        "lng": 34.968,
+        "verseAnchor": 19
+      },
+      {
+        "name": "沙拉音",
+        "lat": 31.7,
+        "lng": 34.91,
+        "verseAnchor": 52
+      },
+      {
+        "name": "迦特",
+        "lat": 31.7,
+        "lng": 34.847,
+        "verseAnchor": 52
+      },
+      {
+        "name": "以革倫",
+        "lat": 31.78,
+        "lng": 34.85,
+        "verseAnchor": 52
+      }
+    ]
+  }
+}

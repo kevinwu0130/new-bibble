@@ -1,0 +1,65 @@
+{
+  "bookId": "jonah",
+  "chapter": 4,
+  "titleZh": "蓖麻樹下的功課",
+  "period": {
+    "id": "assyrian_period",
+    "name": "亞述時期",
+    "yearRange": [
+      -790,
+      -750
+    ],
+    "mapCenter": [
+      43.2,
+      36.35
+    ],
+    "mapZoom": 9
+  },
+  "note": "約拿坐在城東觀望，神用一棵蓖麻上最後一堂憐憫的課。棚的位置為示意。",
+  "highlights": {
+    "5": [
+      {
+        "anchorText": "城的東邊",
+        "entityId": "booth"
+      }
+    ],
+    "11": [
+      {
+        "anchorText": "尼尼微大城",
+        "entityId": "nineveh"
+      }
+    ]
+  },
+  "entities": {
+    "nineveh": {
+      "name": "尼尼微大城",
+      "type": "place",
+      "lat": 36.36,
+      "lng": 43.15
+    },
+    "booth": {
+      "name": "約拿的棚（城東，示意）",
+      "type": "place",
+      "lat": 36.35,
+      "lng": 43.24
+    }
+  },
+  "route": {
+    "id": "jonah_booth",
+    "label": "出城到城東搭棚",
+    "path": [
+      {
+        "name": "尼尼微",
+        "lat": 36.36,
+        "lng": 43.15,
+        "verseAnchor": 5
+      },
+      {
+        "name": "城東的棚",
+        "lat": 36.35,
+        "lng": 43.24,
+        "verseAnchor": 5
+      }
+    ]
+  }
+}

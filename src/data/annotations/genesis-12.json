@@ -1,0 +1,147 @@
+{
+  "bookId": "genesis",
+  "chapter": 12,
+  "titleZh": "亞伯蘭蒙召：信心的旅程",
+  "period": {
+    "id": "patriarchs",
+    "name": "族長時期",
+    "yearRange": [
+      -2100,
+      -1900
+    ],
+    "mapCenter": [
+      35.5,
+      33
+    ],
+    "mapZoom": 5
+  },
+  "note": "亞伯蘭七十五歲離開哈蘭，沿肥沃月彎南下迦南，再因饑荒下埃及——整本聖經救贖敘事的第一步。",
+  "highlights": {
+    "1": [
+      {
+        "anchorText": "亞伯蘭",
+        "entityId": "abram"
+      }
+    ],
+    "4": [
+      {
+        "anchorText": "哈蘭",
+        "entityId": "haran"
+      }
+    ],
+    "6": [
+      {
+        "anchorText": "示劍",
+        "entityId": "shechem"
+      }
+    ],
+    "8": [
+      {
+        "anchorText": "伯特利",
+        "entityId": "bethel"
+      },
+      {
+        "anchorText": "艾",
+        "entityId": "ai"
+      }
+    ],
+    "9": [
+      {
+        "anchorText": "南地",
+        "entityId": "negev"
+      }
+    ],
+    "10": [
+      {
+        "anchorText": "埃及",
+        "entityId": "egypt"
+      }
+    ]
+  },
+  "entities": {
+    "abram": {
+      "name": "亞伯蘭",
+      "type": "person",
+      "lat": 36.865,
+      "lng": 39.031
+    },
+    "haran": {
+      "name": "哈蘭（出發點）",
+      "type": "place",
+      "lat": 36.865,
+      "lng": 39.031
+    },
+    "shechem": {
+      "name": "示劍・摩利橡樹",
+      "type": "place",
+      "lat": 32.213,
+      "lng": 35.282
+    },
+    "bethel": {
+      "name": "伯特利",
+      "type": "place",
+      "lat": 31.93,
+      "lng": 35.22
+    },
+    "ai": {
+      "name": "艾",
+      "type": "place",
+      "lat": 31.917,
+      "lng": 35.266
+    },
+    "negev": {
+      "name": "南地（尼革夫）",
+      "type": "place",
+      "lat": 30.85,
+      "lng": 34.77
+    },
+    "egypt": {
+      "name": "埃及",
+      "type": "place",
+      "lat": 30.05,
+      "lng": 31.23
+    }
+  },
+  "route": {
+    "id": "abram_journey",
+    "label": "哈蘭 → 迦南 → 埃及",
+    "path": [
+      {
+        "name": "哈蘭",
+        "lat": 36.865,
+        "lng": 39.031,
+        "verseAnchor": 4
+      },
+      {
+        "name": "大馬士革一帶（示意途經）",
+        "lat": 33.51,
+        "lng": 36.29,
+        "verseAnchor": 5
+      },
+      {
+        "name": "示劍",
+        "lat": 32.213,
+        "lng": 35.282,
+        "verseAnchor": 6
+      },
+      {
+        "name": "伯特利",
+        "lat": 31.93,
+        "lng": 35.22,
+        "verseAnchor": 8
+      },
+      {
+        "name": "南地",
+        "lat": 30.85,
+        "lng": 34.77,
+        "verseAnchor": 9
+      },
+      {
+        "name": "埃及",
+        "lat": 30.05,
+        "lng": 31.23,
+        "verseAnchor": 10
+      }
+    ]
+  }
+}

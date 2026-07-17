@@ -1,0 +1,169 @@
+{
+  "bookId": "acts",
+  "chapter": 28,
+  "titleZh": "米利大到羅馬",
+  "period": {
+    "id": "roman_empire_paul_rome",
+    "name": "羅馬帝國 - 保羅赴羅馬",
+    "yearRange": [
+      59,
+      62
+    ],
+    "mapCenter": [
+      14.5,
+      38.8
+    ],
+    "mapZoom": 5
+  },
+  "note": "在米利大（馬爾他）過冬三個月後，換亞力山大船北上，經西西里與義大利半島西岸抵達羅馬——使徒行傳的終點站。",
+  "highlights": {
+    "1": [
+      {
+        "anchorText": "米利大",
+        "entityId": "malta"
+      }
+    ],
+    "12": [
+      {
+        "anchorText": "敘拉古",
+        "entityId": "syracuse"
+      }
+    ],
+    "13": [
+      {
+        "anchorText": "利基翁",
+        "entityId": "rhegium"
+      },
+      {
+        "anchorText": "部丟利",
+        "entityId": "puteoli"
+      }
+    ],
+    "14": [
+      {
+        "anchorText": "羅馬",
+        "entityId": "rome"
+      }
+    ],
+    "15": [
+      {
+        "anchorText": "亞比烏市",
+        "entityId": "appii_forum"
+      },
+      {
+        "anchorText": "三館",
+        "entityId": "three_taverns"
+      }
+    ],
+    "16": [
+      {
+        "anchorText": "羅馬城",
+        "entityId": "rome"
+      }
+    ],
+    "17": [
+      {
+        "anchorText": "耶路撒冷",
+        "entityId": "jerusalem"
+      }
+    ]
+  },
+  "entities": {
+    "malta": {
+      "name": "米利大（馬爾他）",
+      "type": "place",
+      "lat": 35.89,
+      "lng": 14.44
+    },
+    "syracuse": {
+      "name": "敘拉古（西西里）",
+      "type": "place",
+      "lat": 37.07,
+      "lng": 15.29
+    },
+    "rhegium": {
+      "name": "利基翁",
+      "type": "place",
+      "lat": 38.11,
+      "lng": 15.65
+    },
+    "puteoli": {
+      "name": "部丟利（上岸）",
+      "type": "place",
+      "lat": 40.83,
+      "lng": 14.12
+    },
+    "appii_forum": {
+      "name": "亞比烏市",
+      "type": "place",
+      "lat": 41.53,
+      "lng": 13.03
+    },
+    "three_taverns": {
+      "name": "三館",
+      "type": "place",
+      "lat": 41.62,
+      "lng": 12.72
+    },
+    "rome": {
+      "name": "羅馬",
+      "type": "place",
+      "lat": 41.89,
+      "lng": 12.49
+    },
+    "jerusalem": {
+      "name": "耶路撒冷",
+      "type": "place",
+      "lat": 31.778,
+      "lng": 35.235
+    }
+  },
+  "route": {
+    "id": "paul_voyage_to_rome_2",
+    "label": "米利大 → 羅馬",
+    "path": [
+      {
+        "name": "米利大",
+        "lat": 35.89,
+        "lng": 14.44,
+        "verseAnchor": 11
+      },
+      {
+        "name": "敘拉古",
+        "lat": 37.07,
+        "lng": 15.29,
+        "verseAnchor": 12
+      },
+      {
+        "name": "利基翁",
+        "lat": 38.11,
+        "lng": 15.65,
+        "verseAnchor": 13
+      },
+      {
+        "name": "部丟利",
+        "lat": 40.83,
+        "lng": 14.12,
+        "verseAnchor": 13
+      },
+      {
+        "name": "亞比烏市",
+        "lat": 41.53,
+        "lng": 13.03,
+        "verseAnchor": 15
+      },
+      {
+        "name": "三館",
+        "lat": 41.62,
+        "lng": 12.72,
+        "verseAnchor": 15
+      },
+      {
+        "name": "羅馬",
+        "lat": 41.89,
+        "lng": 12.49,
+        "verseAnchor": 16
+      }
+    ]
+  }
+}
