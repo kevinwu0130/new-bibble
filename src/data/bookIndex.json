@@ -1,0 +1,596 @@
+[
+  {
+    "id": "genesis",
+    "order": 1,
+    "abbr": "創",
+    "name": "創世記",
+    "nameEn": "Genesis",
+    "testament": "OT",
+    "chapterCount": 50
+  },
+  {
+    "id": "exodus",
+    "order": 2,
+    "abbr": "出",
+    "name": "出埃及記",
+    "nameEn": "Exodus",
+    "testament": "OT",
+    "chapterCount": 40
+  },
+  {
+    "id": "leviticus",
+    "order": 3,
+    "abbr": "利",
+    "name": "利未記",
+    "nameEn": "Leviticus",
+    "testament": "OT",
+    "chapterCount": 27
+  },
+  {
+    "id": "numbers",
+    "order": 4,
+    "abbr": "民",
+    "name": "民數記",
+    "nameEn": "Numbers",
+    "testament": "OT",
+    "chapterCount": 36
+  },
+  {
+    "id": "deuteronomy",
+    "order": 5,
+    "abbr": "申",
+    "name": "申命記",
+    "nameEn": "Deuteronomy",
+    "testament": "OT",
+    "chapterCount": 34
+  },
+  {
+    "id": "joshua",
+    "order": 6,
+    "abbr": "書",
+    "name": "約書亞記",
+    "nameEn": "Joshua",
+    "testament": "OT",
+    "chapterCount": 24
+  },
+  {
+    "id": "judges",
+    "order": 7,
+    "abbr": "士",
+    "name": "士師記",
+    "nameEn": "Judges",
+    "testament": "OT",
+    "chapterCount": 21
+  },
+  {
+    "id": "ruth",
+    "order": 8,
+    "abbr": "得",
+    "name": "路得記",
+    "nameEn": "Ruth",
+    "testament": "OT",
+    "chapterCount": 4
+  },
+  {
+    "id": "1-samuel",
+    "order": 9,
+    "abbr": "撒上",
+    "name": "撒母耳記上",
+    "nameEn": "1 Samuel",
+    "testament": "OT",
+    "chapterCount": 31
+  },
+  {
+    "id": "2-samuel",
+    "order": 10,
+    "abbr": "撒下",
+    "name": "撒母耳記下",
+    "nameEn": "2 Samuel",
+    "testament": "OT",
+    "chapterCount": 24
+  },
+  {
+    "id": "1-kings",
+    "order": 11,
+    "abbr": "王上",
+    "name": "列王紀上",
+    "nameEn": "1 Kings",
+    "testament": "OT",
+    "chapterCount": 22
+  },
+  {
+    "id": "2-kings",
+    "order": 12,
+    "abbr": "王下",
+    "name": "列王紀下",
+    "nameEn": "2 Kings",
+    "testament": "OT",
+    "chapterCount": 25
+  },
+  {
+    "id": "1-chronicles",
+    "order": 13,
+    "abbr": "代上",
+    "name": "歷代志上",
+    "nameEn": "1 Chronicles",
+    "testament": "OT",
+    "chapterCount": 29
+  },
+  {
+    "id": "2-chronicles",
+    "order": 14,
+    "abbr": "代下",
+    "name": "歷代志下",
+    "nameEn": "2 Chronicles",
+    "testament": "OT",
+    "chapterCount": 36
+  },
+  {
+    "id": "ezra",
+    "order": 15,
+    "abbr": "拉",
+    "name": "以斯拉記",
+    "nameEn": "Ezra",
+    "testament": "OT",
+    "chapterCount": 10
+  },
+  {
+    "id": "nehemiah",
+    "order": 16,
+    "abbr": "尼",
+    "name": "尼希米記",
+    "nameEn": "Nehemiah",
+    "testament": "OT",
+    "chapterCount": 13
+  },
+  {
+    "id": "esther",
+    "order": 17,
+    "abbr": "斯",
+    "name": "以斯帖記",
+    "nameEn": "Esther",
+    "testament": "OT",
+    "chapterCount": 10
+  },
+  {
+    "id": "job",
+    "order": 18,
+    "abbr": "伯",
+    "name": "約伯記",
+    "nameEn": "Job",
+    "testament": "OT",
+    "chapterCount": 42
+  },
+  {
+    "id": "psalms",
+    "order": 19,
+    "abbr": "詩",
+    "name": "詩篇",
+    "nameEn": "Psalms",
+    "testament": "OT",
+    "chapterCount": 150
+  },
+  {
+    "id": "proverbs",
+    "order": 20,
+    "abbr": "箴",
+    "name": "箴言",
+    "nameEn": "Proverbs",
+    "testament": "OT",
+    "chapterCount": 31
+  },
+  {
+    "id": "ecclesiastes",
+    "order": 21,
+    "abbr": "傳",
+    "name": "傳道書",
+    "nameEn": "Ecclesiastes",
+    "testament": "OT",
+    "chapterCount": 12
+  },
+  {
+    "id": "song-of-songs",
+    "order": 22,
+    "abbr": "歌",
+    "name": "雅歌",
+    "nameEn": "Song of Songs",
+    "testament": "OT",
+    "chapterCount": 8
+  },
+  {
+    "id": "isaiah",
+    "order": 23,
+    "abbr": "賽",
+    "name": "以賽亞書",
+    "nameEn": "Isaiah",
+    "testament": "OT",
+    "chapterCount": 66
+  },
+  {
+    "id": "jeremiah",
+    "order": 24,
+    "abbr": "耶",
+    "name": "耶利米書",
+    "nameEn": "Jeremiah",
+    "testament": "OT",
+    "chapterCount": 52
+  },
+  {
+    "id": "lamentations",
+    "order": 25,
+    "abbr": "哀",
+    "name": "耶利米哀歌",
+    "nameEn": "Lamentations",
+    "testament": "OT",
+    "chapterCount": 5
+  },
+  {
+    "id": "ezekiel",
+    "order": 26,
+    "abbr": "結",
+    "name": "以西結書",
+    "nameEn": "Ezekiel",
+    "testament": "OT",
+    "chapterCount": 48
+  },
+  {
+    "id": "daniel",
+    "order": 27,
+    "abbr": "但",
+    "name": "但以理書",
+    "nameEn": "Daniel",
+    "testament": "OT",
+    "chapterCount": 12
+  },
+  {
+    "id": "hosea",
+    "order": 28,
+    "abbr": "何",
+    "name": "何西阿書",
+    "nameEn": "Hosea",
+    "testament": "OT",
+    "chapterCount": 14
+  },
+  {
+    "id": "joel",
+    "order": 29,
+    "abbr": "珥",
+    "name": "約珥書",
+    "nameEn": "Joel",
+    "testament": "OT",
+    "chapterCount": 3
+  },
+  {
+    "id": "amos",
+    "order": 30,
+    "abbr": "摩",
+    "name": "阿摩司書",
+    "nameEn": "Amos",
+    "testament": "OT",
+    "chapterCount": 9
+  },
+  {
+    "id": "obadiah",
+    "order": 31,
+    "abbr": "俄",
+    "name": "俄巴底亞書",
+    "nameEn": "Obadiah",
+    "testament": "OT",
+    "chapterCount": 1
+  },
+  {
+    "id": "jonah",
+    "order": 32,
+    "abbr": "拿",
+    "name": "約拿書",
+    "nameEn": "Jonah",
+    "testament": "OT",
+    "chapterCount": 4
+  },
+  {
+    "id": "micah",
+    "order": 33,
+    "abbr": "彌",
+    "name": "彌迦書",
+    "nameEn": "Micah",
+    "testament": "OT",
+    "chapterCount": 7
+  },
+  {
+    "id": "nahum",
+    "order": 34,
+    "abbr": "鴻",
+    "name": "那鴻書",
+    "nameEn": "Nahum",
+    "testament": "OT",
+    "chapterCount": 3
+  },
+  {
+    "id": "habakkuk",
+    "order": 35,
+    "abbr": "哈",
+    "name": "哈巴谷書",
+    "nameEn": "Habakkuk",
+    "testament": "OT",
+    "chapterCount": 3
+  },
+  {
+    "id": "zephaniah",
+    "order": 36,
+    "abbr": "番",
+    "name": "西番雅書",
+    "nameEn": "Zephaniah",
+    "testament": "OT",
+    "chapterCount": 3
+  },
+  {
+    "id": "haggai",
+    "order": 37,
+    "abbr": "該",
+    "name": "哈該書",
+    "nameEn": "Haggai",
+    "testament": "OT",
+    "chapterCount": 2
+  },
+  {
+    "id": "zechariah",
+    "order": 38,
+    "abbr": "亞",
+    "name": "撒迦利亞書",
+    "nameEn": "Zechariah",
+    "testament": "OT",
+    "chapterCount": 14
+  },
+  {
+    "id": "malachi",
+    "order": 39,
+    "abbr": "瑪",
+    "name": "瑪拉基書",
+    "nameEn": "Malachi",
+    "testament": "OT",
+    "chapterCount": 4
+  },
+  {
+    "id": "matthew",
+    "order": 40,
+    "abbr": "太",
+    "name": "馬太福音",
+    "nameEn": "Matthew",
+    "testament": "NT",
+    "chapterCount": 28
+  },
+  {
+    "id": "mark",
+    "order": 41,
+    "abbr": "可",
+    "name": "馬可福音",
+    "nameEn": "Mark",
+    "testament": "NT",
+    "chapterCount": 16
+  },
+  {
+    "id": "luke",
+    "order": 42,
+    "abbr": "路",
+    "name": "路加福音",
+    "nameEn": "Luke",
+    "testament": "NT",
+    "chapterCount": 24
+  },
+  {
+    "id": "john",
+    "order": 43,
+    "abbr": "約",
+    "name": "約翰福音",
+    "nameEn": "John",
+    "testament": "NT",
+    "chapterCount": 21
+  },
+  {
+    "id": "acts",
+    "order": 44,
+    "abbr": "徒",
+    "name": "使徒行傳",
+    "nameEn": "Acts",
+    "testament": "NT",
+    "chapterCount": 28
+  },
+  {
+    "id": "romans",
+    "order": 45,
+    "abbr": "羅",
+    "name": "羅馬書",
+    "nameEn": "Romans",
+    "testament": "NT",
+    "chapterCount": 16
+  },
+  {
+    "id": "1-corinthians",
+    "order": 46,
+    "abbr": "林前",
+    "name": "哥林多前書",
+    "nameEn": "1 Corinthians",
+    "testament": "NT",
+    "chapterCount": 16
+  },
+  {
+    "id": "2-corinthians",
+    "order": 47,
+    "abbr": "林後",
+    "name": "哥林多後書",
+    "nameEn": "2 Corinthians",
+    "testament": "NT",
+    "chapterCount": 13
+  },
+  {
+    "id": "galatians",
+    "order": 48,
+    "abbr": "加",
+    "name": "加拉太書",
+    "nameEn": "Galatians",
+    "testament": "NT",
+    "chapterCount": 6
+  },
+  {
+    "id": "ephesians",
+    "order": 49,
+    "abbr": "弗",
+    "name": "以弗所書",
+    "nameEn": "Ephesians",
+    "testament": "NT",
+    "chapterCount": 6
+  },
+  {
+    "id": "philippians",
+    "order": 50,
+    "abbr": "腓",
+    "name": "腓立比書",
+    "nameEn": "Philippians",
+    "testament": "NT",
+    "chapterCount": 4
+  },
+  {
+    "id": "colossians",
+    "order": 51,
+    "abbr": "西",
+    "name": "歌羅西書",
+    "nameEn": "Colossians",
+    "testament": "NT",
+    "chapterCount": 4
+  },
+  {
+    "id": "1-thessalonians",
+    "order": 52,
+    "abbr": "帖前",
+    "name": "帖撒羅尼迦前書",
+    "nameEn": "1 Thessalonians",
+    "testament": "NT",
+    "chapterCount": 5
+  },
+  {
+    "id": "2-thessalonians",
+    "order": 53,
+    "abbr": "帖後",
+    "name": "帖撒羅尼迦後書",
+    "nameEn": "2 Thessalonians",
+    "testament": "NT",
+    "chapterCount": 3
+  },
+  {
+    "id": "1-timothy",
+    "order": 54,
+    "abbr": "提前",
+    "name": "提摩太前書",
+    "nameEn": "1 Timothy",
+    "testament": "NT",
+    "chapterCount": 6
+  },
+  {
+    "id": "2-timothy",
+    "order": 55,
+    "abbr": "提後",
+    "name": "提摩太後書",
+    "nameEn": "2 Timothy",
+    "testament": "NT",
+    "chapterCount": 4
+  },
+  {
+    "id": "titus",
+    "order": 56,
+    "abbr": "多",
+    "name": "提多書",
+    "nameEn": "Titus",
+    "testament": "NT",
+    "chapterCount": 3
+  },
+  {
+    "id": "philemon",
+    "order": 57,
+    "abbr": "門",
+    "name": "腓利門書",
+    "nameEn": "Philemon",
+    "testament": "NT",
+    "chapterCount": 1
+  },
+  {
+    "id": "hebrews",
+    "order": 58,
+    "abbr": "來",
+    "name": "希伯來書",
+    "nameEn": "Hebrews",
+    "testament": "NT",
+    "chapterCount": 13
+  },
+  {
+    "id": "james",
+    "order": 59,
+    "abbr": "雅",
+    "name": "雅各書",
+    "nameEn": "James",
+    "testament": "NT",
+    "chapterCount": 5
+  },
+  {
+    "id": "1-peter",
+    "order": 60,
+    "abbr": "彼前",
+    "name": "彼得前書",
+    "nameEn": "1 Peter",
+    "testament": "NT",
+    "chapterCount": 5
+  },
+  {
+    "id": "2-peter",
+    "order": 61,
+    "abbr": "彼後",
+    "name": "彼得後書",
+    "nameEn": "2 Peter",
+    "testament": "NT",
+    "chapterCount": 3
+  },
+  {
+    "id": "1-john",
+    "order": 62,
+    "abbr": "約一",
+    "name": "約翰一書",
+    "nameEn": "1 John",
+    "testament": "NT",
+    "chapterCount": 5
+  },
+  {
+    "id": "2-john",
+    "order": 63,
+    "abbr": "約二",
+    "name": "約翰二書",
+    "nameEn": "2 John",
+    "testament": "NT",
+    "chapterCount": 1
+  },
+  {
+    "id": "3-john",
+    "order": 64,
+    "abbr": "約三",
+    "name": "約翰三書",
+    "nameEn": "3 John",
+    "testament": "NT",
+    "chapterCount": 1
+  },
+  {
+    "id": "jude",
+    "order": 65,
+    "abbr": "猶",
+    "name": "猶大書",
+    "nameEn": "Jude",
+    "testament": "NT",
+    "chapterCount": 1
+  },
+  {
+    "id": "revelation",
+    "order": 66,
+    "abbr": "啟",
+    "name": "啟示錄",
+    "nameEn": "Revelation",
+    "testament": "NT",
+    "chapterCount": 22
+  }
+]

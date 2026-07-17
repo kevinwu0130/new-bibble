@@ -1,0 +1,281 @@
+{
+  "bookId": "acts",
+  "chapter": 13,
+  "titleZh": "保羅第一次宣教旅行（上）",
+  "period": {
+    "id": "roman_empire_early_church",
+    "name": "羅馬帝國 - 早期教會",
+    "yearRange": [
+      46,
+      48
+    ],
+    "mapCenter": [
+      34.5,
+      36.5
+    ],
+    "mapZoom": 5.2
+  },
+  "note": "地點座標採用學界普遍接受的古城現代對應位置。經文採和合本（公有領域），為配合逐節高亮已省略引號標點。",
+  "highlights": {
+    "1": [
+      {
+        "anchorText": "安提阿",
+        "entityId": "antioch_syria"
+      },
+      {
+        "anchorText": "巴拿巴",
+        "entityId": "barnabas"
+      },
+      {
+        "anchorText": "掃羅",
+        "entityId": "saul_paul"
+      }
+    ],
+    "2": [
+      {
+        "anchorText": "巴拿巴",
+        "entityId": "barnabas"
+      },
+      {
+        "anchorText": "掃羅",
+        "entityId": "saul_paul"
+      }
+    ],
+    "4": [
+      {
+        "anchorText": "西流基",
+        "entityId": "seleucia"
+      },
+      {
+        "anchorText": "居比路",
+        "entityId": "cyprus_salamis"
+      }
+    ],
+    "5": [
+      {
+        "anchorText": "撒拉米",
+        "entityId": "cyprus_salamis"
+      }
+    ],
+    "6": [
+      {
+        "anchorText": "帕弗",
+        "entityId": "paphos"
+      }
+    ],
+    "7": [
+      {
+        "anchorText": "巴拿巴",
+        "entityId": "barnabas"
+      },
+      {
+        "anchorText": "掃羅",
+        "entityId": "saul_paul"
+      }
+    ],
+    "9": [
+      {
+        "anchorText": "掃羅又名保羅",
+        "entityId": "saul_paul"
+      }
+    ],
+    "13": [
+      {
+        "anchorText": "帕弗",
+        "entityId": "paphos"
+      },
+      {
+        "anchorText": "別加",
+        "entityId": "perga"
+      },
+      {
+        "anchorText": "保羅",
+        "entityId": "saul_paul"
+      },
+      {
+        "anchorText": "耶路撒冷",
+        "entityId": "jerusalem"
+      }
+    ],
+    "14": [
+      {
+        "anchorText": "別加",
+        "entityId": "perga"
+      },
+      {
+        "anchorText": "彼西底的安提阿",
+        "entityId": "antioch_pisidia"
+      }
+    ],
+    "16": [
+      {
+        "anchorText": "保羅",
+        "entityId": "saul_paul"
+      }
+    ],
+    "27": [
+      {
+        "anchorText": "耶路撒冷",
+        "entityId": "jerusalem"
+      }
+    ],
+    "31": [
+      {
+        "anchorText": "耶路撒冷",
+        "entityId": "jerusalem"
+      }
+    ],
+    "43": [
+      {
+        "anchorText": "保羅",
+        "entityId": "saul_paul"
+      },
+      {
+        "anchorText": "巴拿巴",
+        "entityId": "barnabas"
+      }
+    ],
+    "45": [
+      {
+        "anchorText": "保羅",
+        "entityId": "saul_paul"
+      }
+    ],
+    "46": [
+      {
+        "anchorText": "保羅",
+        "entityId": "saul_paul"
+      },
+      {
+        "anchorText": "巴拿巴",
+        "entityId": "barnabas"
+      }
+    ],
+    "50": [
+      {
+        "anchorText": "保羅",
+        "entityId": "saul_paul"
+      },
+      {
+        "anchorText": "巴拿巴",
+        "entityId": "barnabas"
+      }
+    ],
+    "51": [
+      {
+        "anchorText": "以哥念",
+        "entityId": "iconium"
+      }
+    ]
+  },
+  "entities": {
+    "saul_paul": {
+      "name": "掃羅（保羅）",
+      "type": "person",
+      "lat": 36.2021,
+      "lng": 36.1603
+    },
+    "barnabas": {
+      "name": "巴拿巴",
+      "type": "person",
+      "lat": 36.2021,
+      "lng": 36.1603
+    },
+    "antioch_syria": {
+      "name": "安提阿（敘利亞）",
+      "type": "place",
+      "lat": 36.2021,
+      "lng": 36.1603
+    },
+    "seleucia": {
+      "name": "西流基",
+      "type": "place",
+      "lat": 36.118,
+      "lng": 35.933
+    },
+    "cyprus_salamis": {
+      "name": "撒拉米（居比路）",
+      "type": "place",
+      "lat": 35.1856,
+      "lng": 33.9
+    },
+    "paphos": {
+      "name": "帕弗",
+      "type": "place",
+      "lat": 34.7571,
+      "lng": 32.4066
+    },
+    "perga": {
+      "name": "別加",
+      "type": "place",
+      "lat": 36.9611,
+      "lng": 30.8547
+    },
+    "antioch_pisidia": {
+      "name": "彼西底的安提阿",
+      "type": "place",
+      "lat": 38.3068,
+      "lng": 31.1898
+    },
+    "iconium": {
+      "name": "以哥念",
+      "type": "place",
+      "lat": 37.8667,
+      "lng": 32.4833
+    },
+    "jerusalem": {
+      "name": "耶路撒冷",
+      "type": "place",
+      "lat": 31.7784,
+      "lng": 35.2354
+    }
+  },
+  "route": {
+    "id": "paul_first_journey_part1",
+    "label": "保羅第一次宣教旅行（安提阿 → 以哥念）",
+    "path": [
+      {
+        "name": "安提阿（敘利亞）",
+        "lat": 36.2021,
+        "lng": 36.1603,
+        "verseAnchor": 1
+      },
+      {
+        "name": "西流基",
+        "lat": 36.118,
+        "lng": 35.933,
+        "verseAnchor": 4
+      },
+      {
+        "name": "撒拉米",
+        "lat": 35.1856,
+        "lng": 33.9,
+        "verseAnchor": 5
+      },
+      {
+        "name": "帕弗",
+        "lat": 34.7571,
+        "lng": 32.4066,
+        "verseAnchor": 6
+      },
+      {
+        "name": "別加",
+        "lat": 36.9611,
+        "lng": 30.8547,
+        "verseAnchor": 13
+      },
+      {
+        "name": "彼西底的安提阿",
+        "lat": 38.3068,
+        "lng": 31.1898,
+        "verseAnchor": 14
+      },
+      {
+        "name": "以哥念",
+        "lat": 37.8667,
+        "lng": 32.4833,
+        "verseAnchor": 51
+      }
+    ]
+  }
+}

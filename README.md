@@ -1,6 +1,14 @@
 # New Bibble
 
-專案骨架，尚未決定具體功能，先建立可運行的基本架構供後續擴充。
+聖經互動閱讀器：左欄經文、右欄地圖，經文中的人物／地點高亮與地圖 Pin 雙向連動。
+
+## 資料
+
+- **經文**：和合本（CUV，公有領域）正體字全文，新舊約 66 卷 1,189 章 31,103 節
+  - 來源：npm 套件 [`chinese-bible-search`](https://www.npmjs.com/package/chinese-bible-search)（MIT），文本取自 [信望愛站](http://springbible.fhl.net/OfflineBible/offline.html)
+  - `src/data/books/` — 每卷一個 JSON，依需要動態載入
+  - `src/data/bookIndex.json` — 66 卷目錄（名稱／縮寫／章數）
+- **地圖註解**：`src/data/annotations/` — 含高亮實體、座標與路線的章節（目前：出埃及記 14、使徒行傳 13），逐步擴充
 
 ## 技術棧
 
