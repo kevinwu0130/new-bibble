@@ -1,6 +1,8 @@
 // AI 章節插圖：GET /api/illustration?book=<bookId>&chapter=<n>
-// 流程：LLM 依書卷+章數寫出英文場景描述 → FLUX 產圖 → 邊緣快取（每章僅生成一次）
+// 流程：KV（若有綁定）→ 邊緣快取 → LLM 場景描述 → FLUX 產圖 → 寫回 KV + 快取
 // 需要 wrangler.toml 的 [ai] binding（Workers AI，Pages 免金鑰）
+// 選配：KV binding「ILLUSTRATIONS」— 有綁定時圖片永久儲存、全球通用；
+//       沒有時退回邊緣快取（各機房各自生成、可能被回收）
 
 const json = (data, status = 200) =>
   new Response(JSON.stringify(data), {
@@ -26,6 +28,22 @@ export async function onRequestGet(context) {
   const cacheKey = new Request(`https://cache.new-bibble.internal/illustration/${book}/${chapter}`)
   const hit = await cache.match(cacheKey)
   if (hit) return hit
+
+  const kvKey = `${book}/${chapter}`
+  const imageHeaders = {
+    'Content-Type': 'image/jpeg',
+    'Cache-Control': 'public, max-age=31536000, immutable',
+  }
+
+  // KV 命中：永久儲存的圖直接回傳（並回填邊緣快取）
+  if (env.ILLUSTRATIONS) {
+    const stored = await env.ILLUSTRATIONS.get(kvKey, 'arrayBuffer')
+    if (stored) {
+      const res = new Response(stored, { headers: imageHeaders })
+      context.waitUntil(cache.put(cacheKey, res.clone()))
+      return res
+    }
+  }
 
   // 1) 讓 LLM 描述本章最具代表性的場景（英文 prompt 對圖像模型效果較好）
   let prompt =
@@ -69,12 +87,10 @@ export async function onRequestGet(context) {
   }
 
   const bytes = Uint8Array.from(atob(out.image), (c) => c.charCodeAt(0))
-  const res = new Response(bytes, {
-    headers: {
-      'Content-Type': 'image/jpeg',
-      'Cache-Control': 'public, max-age=31536000, immutable',
-    },
-  })
+  const res = new Response(bytes, { headers: imageHeaders })
   context.waitUntil(cache.put(cacheKey, res.clone()))
+  if (env.ILLUSTRATIONS) {
+    context.waitUntil(env.ILLUSTRATIONS.put(kvKey, bytes.buffer))
+  }
   return res
 }

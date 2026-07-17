@@ -1,0 +1,65 @@
+{
+  "bookId": "jonah",
+  "chapter": 2,
+  "titleZh": "魚腹中的禱告",
+  "period": {
+    "id": "assyrian_period",
+    "name": "亞述時期",
+    "yearRange": [
+      -790,
+      -750
+    ],
+    "mapCenter": [
+      33.5,
+      32.8
+    ],
+    "mapZoom": 5.5
+  },
+  "note": "魚腹與吐上旱地的位置為傳統示意，經文未言明確切地點。",
+  "highlights": {
+    "1": [
+      {
+        "anchorText": "魚腹",
+        "entityId": "great_fish"
+      }
+    ],
+    "10": [
+      {
+        "anchorText": "旱地",
+        "entityId": "dry_land"
+      }
+    ]
+  },
+  "entities": {
+    "great_fish": {
+      "name": "魚腹中（示意）",
+      "type": "place",
+      "lat": 33,
+      "lng": 32.5
+    },
+    "dry_land": {
+      "name": "吐在旱地（傳統：約帕附近海岸）",
+      "type": "place",
+      "lat": 32.1,
+      "lng": 34.78
+    }
+  },
+  "route": {
+    "id": "jonah_return",
+    "label": "大魚把約拿送回岸邊",
+    "path": [
+      {
+        "name": "海中",
+        "lat": 33,
+        "lng": 32.5,
+        "verseAnchor": 1
+      },
+      {
+        "name": "旱地",
+        "lat": 32.1,
+        "lng": 34.78,
+        "verseAnchor": 10
+      }
+    ]
+  }
+}

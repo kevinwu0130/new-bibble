@@ -1,0 +1,123 @@
+{
+  "bookId": "jonah",
+  "chapter": 1,
+  "titleZh": "逃往他施的先知",
+  "period": {
+    "id": "assyrian_period",
+    "name": "亞述時期",
+    "yearRange": [
+      -790,
+      -750
+    ],
+    "mapCenter": [
+      18,
+      35.5
+    ],
+    "mapZoom": 3.2
+  },
+  "note": "神呼召約拿往東到尼尼微，他卻搭船往西逃向他施（傳統認定在西班牙）——地圖上一眼可見完全相反的方向。他施位置學界仍有討論，此處採傳統他施（Tartessos）。",
+  "highlights": {
+    "1": [
+      {
+        "anchorText": "約拿",
+        "entityId": "jonah"
+      }
+    ],
+    "2": [
+      {
+        "anchorText": "尼尼微",
+        "entityId": "nineveh"
+      }
+    ],
+    "3": [
+      {
+        "anchorText": "他施",
+        "entityId": "tarshish"
+      },
+      {
+        "anchorText": "約帕",
+        "entityId": "joppa"
+      }
+    ],
+    "4": [
+      {
+        "anchorText": "海中",
+        "entityId": "storm"
+      }
+    ],
+    "15": [
+      {
+        "anchorText": "海中",
+        "entityId": "storm"
+      }
+    ],
+    "17": [
+      {
+        "anchorText": "大魚",
+        "entityId": "great_fish"
+      }
+    ]
+  },
+  "entities": {
+    "jonah": {
+      "name": "約拿",
+      "type": "person",
+      "lat": 32.054,
+      "lng": 34.752
+    },
+    "nineveh": {
+      "name": "尼尼微（神呼召的方向）",
+      "type": "place",
+      "lat": 36.36,
+      "lng": 43.15
+    },
+    "tarshish": {
+      "name": "他施（約拿逃跑的方向）",
+      "type": "place",
+      "lat": 36.9,
+      "lng": -6.3
+    },
+    "joppa": {
+      "name": "約帕",
+      "type": "place",
+      "lat": 32.054,
+      "lng": 34.752
+    },
+    "storm": {
+      "name": "海上風暴",
+      "type": "place",
+      "lat": 33.2,
+      "lng": 31.5
+    },
+    "great_fish": {
+      "name": "大魚吞約拿處（示意）",
+      "type": "place",
+      "lat": 33,
+      "lng": 32.5
+    }
+  },
+  "route": {
+    "id": "jonah_flight",
+    "label": "約拿的逃亡路線（往他施，未竟）",
+    "path": [
+      {
+        "name": "約帕（上船）",
+        "lat": 32.054,
+        "lng": 34.752,
+        "verseAnchor": 3
+      },
+      {
+        "name": "海上風暴",
+        "lat": 33.2,
+        "lng": 31.5,
+        "verseAnchor": 4
+      },
+      {
+        "name": "被拋入海中",
+        "lat": 33,
+        "lng": 32.5,
+        "verseAnchor": 15
+      }
+    ]
+  }
+}

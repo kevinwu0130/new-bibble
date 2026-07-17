@@ -1,0 +1,83 @@
+{
+  "bookId": "jonah",
+  "chapter": 3,
+  "titleZh": "尼尼微全城悔改",
+  "period": {
+    "id": "assyrian_period",
+    "name": "亞述時期",
+    "yearRange": [
+      -790,
+      -750
+    ],
+    "mapCenter": [
+      38.5,
+      34.5
+    ],
+    "mapZoom": 4.6
+  },
+  "note": "這次約拿順服，走陸路往東北約 900 公里到亞述首都尼尼微——「有三日的路程」指城的規模。",
+  "highlights": {
+    "2": [
+      {
+        "anchorText": "尼尼微",
+        "entityId": "nineveh"
+      }
+    ],
+    "3": [
+      {
+        "anchorText": "尼尼微去",
+        "entityId": "nineveh"
+      }
+    ],
+    "6": [
+      {
+        "anchorText": "尼尼微王",
+        "entityId": "nineveh"
+      }
+    ]
+  },
+  "entities": {
+    "nineveh": {
+      "name": "尼尼微（今伊拉克摩蘇爾對岸）",
+      "type": "place",
+      "lat": 36.36,
+      "lng": 43.15
+    },
+    "coast": {
+      "name": "地中海岸（出發）",
+      "type": "place",
+      "lat": 32.1,
+      "lng": 34.78
+    }
+  },
+  "route": {
+    "id": "jonah_to_nineveh",
+    "label": "約拿往尼尼微",
+    "path": [
+      {
+        "name": "地中海岸",
+        "lat": 32.1,
+        "lng": 34.78,
+        "verseAnchor": 3
+      },
+      {
+        "name": "大馬士革一帶（示意途經）",
+        "lat": 33.51,
+        "lng": 36.29,
+        "verseAnchor": 3
+      },
+      {
+        "name": "幼發拉底河渡口（示意途經）",
+        "lat": 35.87,
+        "lng": 39.03,
+        "verseAnchor": 3
+      },
+      {
+        "name": "尼尼微",
+        "lat": 36.36,
+        "lng": 43.15,
+        "verseAnchor": 4
+      }
+    ]
+  }
+}
