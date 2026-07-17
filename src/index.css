@@ -5,3 +5,67 @@
 body {
   font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
+
+/* 地圖實體標記：圓點 + 中文名稱標籤 */
+.bible-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.bible-marker-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #dc2626;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  transition: width 0.2s, height 0.2s, background 0.2s;
+}
+.bible-marker-label {
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.2;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #374151;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.bible-marker.active .bible-marker-dot {
+  width: 18px;
+  height: 18px;
+  background: #f59e0b;
+}
+.bible-marker.active .bible-marker-label {
+  background: #f59e0b;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* 路線途經點：編號小圓點 */
+.route-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+  background: #4f46e5;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 12px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* MapLibre 彈出視窗中文樣式 */
+.maplibregl-popup-content {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
