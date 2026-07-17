@@ -1,10 +1,50 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 import { getAnnotation, useReadingStore } from '../../store/readingStore'
 
 const ROUTE_SOURCE_ID = 'route-line'
 const EMPTY_GEOJSON = { type: 'FeatureCollection', features: [] }
+
+// 無地圖標註的章節：由 Workers AI 依章節內容產生插圖（部署到 Cloudflare 後生效）
+function ChapterIllustration({ bookId, chapter }) {
+  const src = `/api/illustration?book=${bookId}&chapter=${chapter}`
+  const [status, setStatus] = useState('loading')
+
+  useEffect(() => setStatus('loading'), [src])
+
+  return (
+    <div className="absolute inset-0 bg-gray-900 flex items-center justify-center overflow-hidden">
+      {status !== 'error' && (
+        <img
+          key={src}
+          src={src}
+          alt="AI 章節插圖"
+          onLoad={() => setStatus('ok')}
+          onError={() => setStatus('error')}
+          className={`w-full h-full object-cover transition-opacity duration-700 ${
+            status === 'ok' ? 'opacity-100' : 'opacity-0'
+          }`}
+        />
+      )}
+      {status === 'loading' && (
+        <span className="absolute text-gray-300 text-sm animate-pulse">
+          AI 正在為本章繪製插圖…（首次生成約需 10 秒）
+        </span>
+      )}
+      {status === 'error' && (
+        <span className="absolute text-gray-400 text-sm px-6 text-center">
+          本章尚無地圖標註，AI 插圖暫時無法載入
+        </span>
+      )}
+      {status === 'ok' && (
+        <span className="absolute bottom-2 right-2 text-[10px] text-white/80 bg-black/40 px-2 py-0.5 rounded">
+          AI 生成示意圖
+        </span>
+      )}
+    </div>
+  )
+}
 
 export default function MapPanel() {
   const activeBookId = useReadingStore((s) => s.activeBookId)
@@ -111,13 +151,7 @@ export default function MapPanel() {
   return (
     <div className="w-full h-full relative">
       <div ref={mapContainerRef} className="w-full h-full" />
-      {!anno && (
-        <div className="absolute inset-x-0 top-3 flex justify-center pointer-events-none">
-          <span className="bg-white/90 text-gray-500 text-xs px-3 py-1.5 rounded-full shadow">
-            本章尚無地圖標註 — 試試「地圖章節」快速連結
-          </span>
-        </div>
-      )}
+      {!anno && <ChapterIllustration bookId={activeBookId} chapter={activeChapter} />}
     </div>
   )
 }
