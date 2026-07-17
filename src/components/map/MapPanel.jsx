@@ -93,7 +93,6 @@ export default function MapPanel() {
 
     Object.entries(markersRef.current).forEach(([id, marker]) => {
       const el = marker.getElement()
-      el.style.transform2 = ''
       el.style.width = id === activeEntityId ? '20px' : '14px'
       el.style.height = id === activeEntityId ? '20px' : '14px'
       el.style.background = id === activeEntityId ? '#f59e0b' : '#dc2626'
