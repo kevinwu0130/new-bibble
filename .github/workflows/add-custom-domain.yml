@@ -1,0 +1,70 @@
+name: Add custom domain
+
+on:
+  workflow_dispatch:
+    inputs:
+      domain:
+        description: '要綁定的網域（如 wenkai5.cc 或 bible.wenkai5.cc）'
+        required: true
+        default: 'wenkai5.cc'
+
+jobs:
+  add-domain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Attach domain to Pages project
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DOMAIN: ${{ inputs.domain }}
+        run: |
+          set -e
+          RES=$(curl -sS -X POST \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/pages/projects/new-bibble/domains" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data "{\"name\":\"${DOMAIN}\"}")
+          echo "$RES" | jq .
+          if echo "$RES" | jq -e '.success == true' > /dev/null; then
+            echo "✅ domain attached to Pages project"
+          elif echo "$RES" | jq -e '.errors[]?.message | test("already")' > /dev/null; then
+            echo "ℹ️ domain already attached — continuing"
+          else
+            echo "❌ failed to attach domain"; exit 1
+          fi
+
+      - name: Create DNS record (CNAME → new-bibble.pages.dev)
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          DOMAIN: ${{ inputs.domain }}
+        run: |
+          set -e
+          # 由網域推出 zone 名稱（取最後兩段）
+          ZONE_NAME=$(echo "$DOMAIN" | awk -F. '{print $(NF-1)"."$NF}')
+          ZONES=$(curl -sS "https://api.cloudflare.com/client/v4/zones?name=${ZONE_NAME}" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}")
+          if ! echo "$ZONES" | jq -e '.success == true and (.result | length > 0)' > /dev/null; then
+            echo "⚠️ 無法讀取 zone（API token 可能缺 Zone:Read / DNS:Edit 權限）"
+            echo "請手動加一筆 DNS 紀錄：CNAME  ${DOMAIN}  →  new-bibble.pages.dev（Proxied）"
+            echo "Dashboard → wenkai5.cc → DNS → Add record"
+            exit 0
+          fi
+          ZONE_ID=$(echo "$ZONES" | jq -r '.result[0].id')
+          EXISTING=$(curl -sS "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/dns_records?name=${DOMAIN}" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}")
+          if echo "$EXISTING" | jq -e '.result | length > 0' > /dev/null; then
+            echo "ℹ️ DNS record already exists:"
+            echo "$EXISTING" | jq '.result[] | {type, name, content}'
+            exit 0
+          fi
+          REC=$(curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/dns_records" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data "{\"type\":\"CNAME\",\"name\":\"${DOMAIN}\",\"content\":\"new-bibble.pages.dev\",\"proxied\":true}")
+          echo "$REC" | jq .
+          if echo "$REC" | jq -e '.success == true' > /dev/null; then
+            echo "✅ DNS record created — https://${DOMAIN} 將在數分鐘內生效（含自動 SSL）"
+          else
+            echo "⚠️ DNS 建立失敗，請手動加：CNAME  ${DOMAIN}  →  new-bibble.pages.dev（Proxied）"
+            exit 0
+          fi
