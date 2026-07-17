@@ -1,0 +1,351 @@
+{
+  "bookId": "exodus",
+  "chapter": 14,
+  "titleZh": "以色列人過紅海",
+  "period": {
+    "id": "exodus",
+    "name": "出埃及時期",
+    "yearRange": [
+      -1446,
+      -1440
+    ],
+    "mapCenter": [
+      32.45,
+      30.05
+    ],
+    "mapZoom": 6.5
+  },
+  "note": "路線座標為傳統示意位置，實際渡海地點在學術上仍有爭議，此處僅供 Demo 呈現互動概念。經文採和合本（公有領域），為配合逐節高亮已省略引號標點。",
+  "highlights": {
+    "1": [
+      {
+        "anchorText": "摩西",
+        "entityId": "moses"
+      }
+    ],
+    "2": [
+      {
+        "anchorText": "比哈希錄",
+        "entityId": "pi_hahiroth"
+      },
+      {
+        "anchorText": "密奪",
+        "entityId": "migdol"
+      }
+    ],
+    "3": [
+      {
+        "anchorText": "法老",
+        "entityId": "pharaoh"
+      }
+    ],
+    "4": [
+      {
+        "anchorText": "法老",
+        "entityId": "pharaoh"
+      },
+      {
+        "anchorText": "埃及人",
+        "entityId": "egypt"
+      }
+    ],
+    "5": [
+      {
+        "anchorText": "埃及",
+        "entityId": "egypt"
+      },
+      {
+        "anchorText": "法老",
+        "entityId": "pharaoh"
+      }
+    ],
+    "6": [
+      {
+        "anchorText": "法老",
+        "entityId": "pharaoh"
+      }
+    ],
+    "7": [
+      {
+        "anchorText": "埃及",
+        "entityId": "egypt"
+      }
+    ],
+    "8": [
+      {
+        "anchorText": "法老",
+        "entityId": "pharaoh"
+      },
+      {
+        "anchorText": "埃及",
+        "entityId": "egypt"
+      }
+    ],
+    "9": [
+      {
+        "anchorText": "比哈希錄",
+        "entityId": "pi_hahiroth"
+      }
+    ],
+    "10": [
+      {
+        "anchorText": "法老",
+        "entityId": "pharaoh"
+      },
+      {
+        "anchorText": "埃及人",
+        "entityId": "egypt"
+      }
+    ],
+    "11": [
+      {
+        "anchorText": "摩西",
+        "entityId": "moses"
+      },
+      {
+        "anchorText": "埃及",
+        "entityId": "egypt"
+      }
+    ],
+    "12": [
+      {
+        "anchorText": "埃及",
+        "entityId": "egypt"
+      }
+    ],
+    "13": [
+      {
+        "anchorText": "摩西",
+        "entityId": "moses"
+      },
+      {
+        "anchorText": "埃及人",
+        "entityId": "egypt"
+      }
+    ],
+    "15": [
+      {
+        "anchorText": "摩西",
+        "entityId": "moses"
+      }
+    ],
+    "16": [
+      {
+        "anchorText": "海",
+        "entityId": "red_sea"
+      }
+    ],
+    "17": [
+      {
+        "anchorText": "埃及人",
+        "entityId": "egypt"
+      },
+      {
+        "anchorText": "法老",
+        "entityId": "pharaoh"
+      }
+    ],
+    "18": [
+      {
+        "anchorText": "法老",
+        "entityId": "pharaoh"
+      },
+      {
+        "anchorText": "埃及人",
+        "entityId": "egypt"
+      }
+    ],
+    "20": [
+      {
+        "anchorText": "埃及",
+        "entityId": "egypt"
+      }
+    ],
+    "21": [
+      {
+        "anchorText": "摩西",
+        "entityId": "moses"
+      },
+      {
+        "anchorText": "海",
+        "entityId": "red_sea"
+      }
+    ],
+    "22": [
+      {
+        "anchorText": "海",
+        "entityId": "red_sea"
+      }
+    ],
+    "23": [
+      {
+        "anchorText": "埃及人",
+        "entityId": "egypt"
+      },
+      {
+        "anchorText": "法老",
+        "entityId": "pharaoh"
+      },
+      {
+        "anchorText": "海",
+        "entityId": "red_sea"
+      }
+    ],
+    "24": [
+      {
+        "anchorText": "埃及",
+        "entityId": "egypt"
+      }
+    ],
+    "25": [
+      {
+        "anchorText": "埃及人",
+        "entityId": "egypt"
+      }
+    ],
+    "26": [
+      {
+        "anchorText": "摩西",
+        "entityId": "moses"
+      },
+      {
+        "anchorText": "海",
+        "entityId": "red_sea"
+      },
+      {
+        "anchorText": "埃及人",
+        "entityId": "egypt"
+      }
+    ],
+    "27": [
+      {
+        "anchorText": "摩西",
+        "entityId": "moses"
+      },
+      {
+        "anchorText": "海",
+        "entityId": "red_sea"
+      },
+      {
+        "anchorText": "埃及人",
+        "entityId": "egypt"
+      }
+    ],
+    "28": [
+      {
+        "anchorText": "法老",
+        "entityId": "pharaoh"
+      },
+      {
+        "anchorText": "海",
+        "entityId": "red_sea"
+      }
+    ],
+    "29": [
+      {
+        "anchorText": "海",
+        "entityId": "red_sea"
+      }
+    ],
+    "30": [
+      {
+        "anchorText": "埃及人",
+        "entityId": "egypt"
+      },
+      {
+        "anchorText": "海",
+        "entityId": "red_sea"
+      }
+    ],
+    "31": [
+      {
+        "anchorText": "摩西",
+        "entityId": "moses"
+      },
+      {
+        "anchorText": "埃及人",
+        "entityId": "egypt"
+      }
+    ]
+  },
+  "entities": {
+    "moses": {
+      "name": "摩西",
+      "type": "person",
+      "lat": 29.95,
+      "lng": 32.55
+    },
+    "pharaoh": {
+      "name": "法老",
+      "type": "person",
+      "lat": 30.57,
+      "lng": 31.98
+    },
+    "egypt": {
+      "name": "埃及",
+      "type": "place",
+      "lat": 30.05,
+      "lng": 31.23
+    },
+    "migdol": {
+      "name": "密奪",
+      "type": "place",
+      "lat": 30.72,
+      "lng": 32.35
+    },
+    "pi_hahiroth": {
+      "name": "比哈希錄",
+      "type": "place",
+      "lat": 29.95,
+      "lng": 32.55
+    },
+    "red_sea": {
+      "name": "紅海（渡海處）",
+      "type": "place",
+      "lat": 29.85,
+      "lng": 32.58
+    }
+  },
+  "route": {
+    "id": "exodus_red_sea_crossing",
+    "label": "以色列人過紅海路線",
+    "path": [
+      {
+        "name": "蘭塞（起點）",
+        "lat": 30.8,
+        "lng": 31.82,
+        "verseAnchor": 1
+      },
+      {
+        "name": "疏割",
+        "lat": 30.57,
+        "lng": 31.98,
+        "verseAnchor": 1
+      },
+      {
+        "name": "以倘",
+        "lat": 30.4,
+        "lng": 32.3,
+        "verseAnchor": 1
+      },
+      {
+        "name": "比‧哈希錄（轉回安營）",
+        "lat": 29.95,
+        "lng": 32.55,
+        "verseAnchor": 2
+      },
+      {
+        "name": "紅海渡口",
+        "lat": 29.85,
+        "lng": 32.58,
+        "verseAnchor": 21
+      },
+      {
+        "name": "書珥曠野（對岸）",
+        "lat": 29.9,
+        "lng": 33,
+        "verseAnchor": 22
+      }
+    ]
+  }
+}

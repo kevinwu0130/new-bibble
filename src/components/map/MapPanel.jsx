@@ -1,14 +1,18 @@
 import { useEffect, useRef } from 'react'
 import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
-import { CHAPTERS, useReadingStore } from '../../store/readingStore'
+import { getAnnotation, useReadingStore } from '../../store/readingStore'
 
 const ROUTE_SOURCE_ID = 'route-line'
+const EMPTY_GEOJSON = { type: 'FeatureCollection', features: [] }
 
 export default function MapPanel() {
-  const activeChapterKey = useReadingStore((s) => s.activeChapterKey)
+  const activeBookId = useReadingStore((s) => s.activeBookId)
+  const activeChapter = useReadingStore((s) => s.activeChapter)
   const activeEntityId = useReadingStore((s) => s.activeEntityId)
   const setActiveEntity = useReadingStore((s) => s.setActiveEntity)
+
+  const anno = getAnnotation(activeBookId, activeChapter)
 
   const mapContainerRef = useRef(null)
   const mapRef = useRef(null)
@@ -27,10 +31,9 @@ export default function MapPanel() {
     return () => map.remove()
   }, [])
 
-  // 章節切換：重繪 Pin + 路線，並飛到該時期的地圖範圍
+  // 章節切換：重繪 Pin + 路線；無註解的章節清空地圖
   useEffect(() => {
     const map = mapRef.current
-    const chapter = CHAPTERS[activeChapterKey]
     if (!map) return
 
     const drawChapter = () => {
@@ -38,8 +41,15 @@ export default function MapPanel() {
       Object.values(markersRef.current).forEach((m) => m.remove())
       markersRef.current = {}
 
+      const routeSource = map.getSource(ROUTE_SOURCE_ID)
+
+      if (!anno) {
+        if (routeSource) routeSource.setData(EMPTY_GEOJSON)
+        return
+      }
+
       // 畫實體 Pin
-      Object.entries(chapter.entities).forEach(([entityId, entity]) => {
+      Object.entries(anno.entities).forEach(([entityId, entity]) => {
         if (entity.type === 'person') return // 人物不重複畫 pin，用地點代表位置
         const el = document.createElement('div')
         el.className = 'map-pin'
@@ -59,11 +69,11 @@ export default function MapPanel() {
         type: 'Feature',
         geometry: {
           type: 'LineString',
-          coordinates: chapter.route.path.map((p) => [p.lng, p.lat]),
+          coordinates: anno.route.path.map((p) => [p.lng, p.lat]),
         },
       }
-      if (map.getSource(ROUTE_SOURCE_ID)) {
-        map.getSource(ROUTE_SOURCE_ID).setData(routeGeoJSON)
+      if (routeSource) {
+        routeSource.setData(routeGeoJSON)
       } else {
         map.addSource(ROUTE_SOURCE_ID, { type: 'geojson', data: routeGeoJSON })
         map.addLayer({
@@ -74,22 +84,21 @@ export default function MapPanel() {
         })
       }
 
-      map.flyTo({ center: chapter.period.mapCenter, zoom: chapter.period.mapZoom })
+      map.flyTo({ center: anno.period.mapCenter, zoom: anno.period.mapZoom })
     }
 
     if (map.isStyleLoaded()) drawChapter()
     else map.once('load', drawChapter)
-  }, [activeChapterKey, setActiveEntity])
+  }, [anno, setActiveEntity])
 
   // 高亮經文中的實體時：飛到該地點並放大該 marker
   useEffect(() => {
     const map = mapRef.current
-    const chapter = CHAPTERS[activeChapterKey]
-    if (!map || !activeEntityId) return
-    const entity = chapter.entities[activeEntityId]
+    if (!map || !anno || !activeEntityId) return
+    const entity = anno.entities[activeEntityId]
     if (!entity) return
 
-    map.flyTo({ center: [entity.lng, entity.lat], zoom: Math.max(chapter.period.mapZoom, 7), speed: 1.2 })
+    map.flyTo({ center: [entity.lng, entity.lat], zoom: Math.max(anno.period.mapZoom, 7), speed: 1.2 })
 
     Object.entries(markersRef.current).forEach(([id, marker]) => {
       const el = marker.getElement()
@@ -97,7 +106,18 @@ export default function MapPanel() {
       el.style.height = id === activeEntityId ? '20px' : '14px'
       el.style.background = id === activeEntityId ? '#f59e0b' : '#dc2626'
     })
-  }, [activeEntityId, activeChapterKey])
+  }, [activeEntityId, anno])
 
-  return <div ref={mapContainerRef} className="w-full h-full" />
+  return (
+    <div className="w-full h-full relative">
+      <div ref={mapContainerRef} className="w-full h-full" />
+      {!anno && (
+        <div className="absolute inset-x-0 top-3 flex justify-center pointer-events-none">
+          <span className="bg-white/90 text-gray-500 text-xs px-3 py-1.5 rounded-full shadow">
+            本章尚無地圖標註 — 試試「地圖章節」快速連結
+          </span>
+        </div>
+      )}
+    </div>
+  )
 }
