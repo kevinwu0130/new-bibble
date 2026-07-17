@@ -1,0 +1,96 @@
+{
+  "book": "Acts",
+  "bookZh": "使徒行傳",
+  "chapter": 13,
+  "translation": "CUV",
+  "titleZh": "保羅第一次宣教旅行（上）",
+  "period": {
+    "id": "roman_empire_early_church",
+    "name": "羅馬帝國 - 早期教會",
+    "yearRange": [46, 48],
+    "mapCenter": [34.5, 36.5],
+    "mapZoom": 5.2
+  },
+  "note": "地點座標採用學界普遍接受的古城現代對應位置。",
+  "verses": [
+    {
+      "verse": 1,
+      "text": "在安提阿的教會中，有幾位先知和教師，就是巴拿巴和稱呼尼結的西面、古利奈人路求、與分封之王希律同養的馬念，並掃羅。",
+      "highlights": [
+        { "anchorText": "安提阿", "entityId": "antioch_syria" },
+        { "anchorText": "巴拿巴", "entityId": "barnabas" },
+        { "anchorText": "掃羅", "entityId": "saul_paul" }
+      ]
+    },
+    {
+      "verse": 4,
+      "text": "他們既被聖靈差遣，就下西流基去，從那裡坐船往塞浦路斯去。",
+      "highlights": [
+        { "anchorText": "西流基", "entityId": "seleucia" },
+        { "anchorText": "塞浦路斯", "entityId": "cyprus_salamis" }
+      ]
+    },
+    {
+      "verse": 5,
+      "text": "到了撒拉米，就在猶太人各會堂裡傳講神的道，也有約翰作他們的幫手。",
+      "highlights": [
+        { "anchorText": "撒拉米", "entityId": "cyprus_salamis" }
+      ]
+    },
+    {
+      "verse": 6,
+      "text": "經過全島，直到帕弗，在那裡遇見一個有法術、假充先知的猶太人，名叫巴‧耶穌。",
+      "highlights": [
+        { "anchorText": "帕弗", "entityId": "paphos" }
+      ]
+    },
+    {
+      "verse": 13,
+      "text": "保羅和他的同人從帕弗開船，來到旁非利亞的別加，約翰就離開他們，回耶路撒冷去。",
+      "highlights": [
+        { "anchorText": "帕弗", "entityId": "paphos" },
+        { "anchorText": "別加", "entityId": "perga" },
+        { "anchorText": "保羅", "entityId": "saul_paul" }
+      ]
+    },
+    {
+      "verse": 14,
+      "text": "他們離了別加往前行，來到彼西底的安提阿，在安息日進會堂坐下。",
+      "highlights": [
+        { "anchorText": "別加", "entityId": "perga" },
+        { "anchorText": "彼西底的安提阿", "entityId": "antioch_pisidia" }
+      ]
+    },
+    {
+      "verse": 51,
+      "text": "二人對着眾人跺下腳上的塵土，就往以哥念去了。",
+      "highlights": [
+        { "anchorText": "以哥念", "entityId": "iconium" }
+      ]
+    }
+  ],
+  "entities": {
+    "saul_paul": { "name": "掃羅（保羅）", "type": "person", "lat": 36.2021, "lng": 36.1603 },
+    "barnabas": { "name": "巴拿巴", "type": "person", "lat": 36.2021, "lng": 36.1603 },
+    "antioch_syria": { "name": "安提阿（敘利亞）", "type": "place", "lat": 36.2021, "lng": 36.1603 },
+    "seleucia": { "name": "西流基", "type": "place", "lat": 36.118, "lng": 35.933 },
+    "cyprus_salamis": { "name": "撒拉米（塞浦路斯）", "type": "place", "lat": 35.1856, "lng": 33.9 },
+    "paphos": { "name": "帕弗", "type": "place", "lat": 34.7571, "lng": 32.4066 },
+    "perga": { "name": "別加", "type": "place", "lat": 36.9611, "lng": 30.8547 },
+    "antioch_pisidia": { "name": "彼西底的安提阿", "type": "place", "lat": 38.3068, "lng": 31.1898 },
+    "iconium": { "name": "以哥念", "type": "place", "lat": 37.8667, "lng": 32.4833 }
+  },
+  "route": {
+    "id": "paul_first_journey_part1",
+    "label": "保羅第一次宣教旅行（安提阿 → 以哥念）",
+    "path": [
+      { "name": "安提阿（敘利亞）", "lat": 36.2021, "lng": 36.1603, "verseAnchor": 1 },
+      { "name": "西流基", "lat": 36.118, "lng": 35.933, "verseAnchor": 4 },
+      { "name": "撒拉米", "lat": 35.1856, "lng": 33.9, "verseAnchor": 5 },
+      { "name": "帕弗", "lat": 34.7571, "lng": 32.4066, "verseAnchor": 6 },
+      { "name": "別加", "lat": 36.9611, "lng": 30.8547, "verseAnchor": 13 },
+      { "name": "彼西底的安提阿", "lat": 38.3068, "lng": 31.1898, "verseAnchor": 14 },
+      { "name": "以哥念", "lat": 37.8667, "lng": 32.4833, "verseAnchor": 51 }
+    ]
+  }
+}

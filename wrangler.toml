@@ -1,0 +1,14 @@
+name = "new-bibble"
+pages_build_output_dir = "dist"
+
+compatibility_date = "2026-01-01"
+
+# 之後若需要 Workers AI，取消下方註解即可使用（免金鑰）
+# [ai]
+# binding = "AI"
+
+# 之後若需要 D1 資料庫，範例：
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "new-bibble-db"
+# database_id = "<database-id>"

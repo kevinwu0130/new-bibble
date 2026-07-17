@@ -1,0 +1,98 @@
+{
+  "book": "Exodus",
+  "bookZh": "出埃及記",
+  "chapter": 14,
+  "translation": "CUV",
+  "titleZh": "以色列人過紅海",
+  "period": {
+    "id": "exodus",
+    "name": "出埃及時期",
+    "yearRange": [-1446, -1440],
+    "mapCenter": [32.45, 30.05],
+    "mapZoom": 6.5
+  },
+  "note": "路線座標為傳統示意位置，實際渡海地點在學術上仍有爭議，此處僅供 Demo 呈現互動概念。",
+  "verses": [
+    {
+      "verse": 1,
+      "text": "耶和華曉諭摩西說：",
+      "highlights": [
+        { "anchorText": "摩西", "entityId": "moses" }
+      ]
+    },
+    {
+      "verse": 2,
+      "text": "你吩咐以色列人轉回，安營在比‧哈希錄前，密奪和海的中間，對着巴力‧洗分，靠近海邊安營。",
+      "highlights": [
+        { "anchorText": "比‧哈希錄", "entityId": "pi_hahiroth" },
+        { "anchorText": "密奪", "entityId": "migdol" }
+      ]
+    },
+    {
+      "verse": 8,
+      "text": "耶和華使埃及王法老的心剛硬，他就追趕以色列人，因為以色列人是昂然無懼地出埃及。",
+      "highlights": [
+        { "anchorText": "法老", "entityId": "pharaoh" },
+        { "anchorText": "埃及", "entityId": "egypt" }
+      ]
+    },
+    {
+      "verse": 9,
+      "text": "埃及人追趕他們，法老一切的馬匹、車輛、馬兵、與軍兵就在海邊上，靠近比‧哈希錄，對着巴力‧洗分，在他們安營的地方追上了。",
+      "highlights": [
+        { "anchorText": "比‧哈希錄", "entityId": "pi_hahiroth" }
+      ]
+    },
+    {
+      "verse": 21,
+      "text": "摩西向海伸杖，耶和華便用大東風，使海水一夜退去，水便分開，海就成了乾地。",
+      "highlights": [
+        { "anchorText": "摩西", "entityId": "moses" },
+        { "anchorText": "海", "entityId": "red_sea" }
+      ]
+    },
+    {
+      "verse": 22,
+      "text": "以色列人下海中走乾地，水在他們的左右作了牆垣。",
+      "highlights": [
+        { "anchorText": "海", "entityId": "red_sea" }
+      ]
+    },
+    {
+      "verse": 28,
+      "text": "水就回流，淹沒了車輛和馬兵。那些跟着以色列人下海的法老全軍，連一個也沒有剩下。",
+      "highlights": [
+        { "anchorText": "法老", "entityId": "pharaoh" },
+        { "anchorText": "海", "entityId": "red_sea" }
+      ]
+    },
+    {
+      "verse": 31,
+      "text": "以色列人看見耶和華向埃及人所行的大事，就敬畏耶和華，又信服他和他的僕人摩西。",
+      "highlights": [
+        { "anchorText": "摩西", "entityId": "moses" },
+        { "anchorText": "埃及人", "entityId": "egypt" }
+      ]
+    }
+  ],
+  "entities": {
+    "moses": { "name": "摩西", "type": "person", "lat": 29.95, "lng": 32.55 },
+    "pharaoh": { "name": "法老", "type": "person", "lat": 30.57, "lng": 31.98 },
+    "egypt": { "name": "埃及", "type": "place", "lat": 30.05, "lng": 31.23 },
+    "migdol": { "name": "密奪", "type": "place", "lat": 30.72, "lng": 32.35 },
+    "pi_hahiroth": { "name": "比‧哈希錄", "type": "place", "lat": 29.95, "lng": 32.55 },
+    "red_sea": { "name": "紅海（渡海處）", "type": "place", "lat": 29.85, "lng": 32.58 }
+  },
+  "route": {
+    "id": "exodus_red_sea_crossing",
+    "label": "以色列人過紅海路線",
+    "path": [
+      { "name": "蘭塞（起點）", "lat": 30.8, "lng": 31.82, "verseAnchor": 1 },
+      { "name": "疏割", "lat": 30.57, "lng": 31.98, "verseAnchor": 1 },
+      { "name": "以倘", "lat": 30.4, "lng": 32.3, "verseAnchor": 1 },
+      { "name": "比‧哈希錄（轉回安營）", "lat": 29.95, "lng": 32.55, "verseAnchor": 2 },
+      { "name": "紅海渡口", "lat": 29.85, "lng": 32.58, "verseAnchor": 21 },
+      { "name": "書珥曠野（對岸）", "lat": 29.9, "lng": 33.0, "verseAnchor": 22 }
+    ]
+  }
+}
