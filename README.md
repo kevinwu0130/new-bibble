@@ -25,6 +25,18 @@ npm run preview
 
 ## 部署（Cloudflare Pages）
 
+### 自動部署（GitHub Actions，建議）
+
+push 到 `master` 會自動建置並部署到 Cloudflare Pages（見 `.github/workflows/deploy.yml`）。
+需先在 GitHub repo 的 **Settings → Secrets and variables → Actions** 加入：
+
+- `CLOUDFLARE_API_TOKEN` — 在 Cloudflare Dashboard 建立，權限至少 `Cloudflare Pages: Edit`
+- `CLOUDFLARE_ACCOUNT_ID` — Cloudflare Dashboard 首頁右側可查到
+
+也可在 Actions 頁面手動觸發（workflow_dispatch）。
+
+### 手動部署
+
 ```bash
 npm run build
 npx wrangler pages deploy dist --project-name new-bibble
