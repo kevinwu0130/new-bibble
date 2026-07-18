@@ -1,0 +1,60 @@
+name: Verify CF token permissions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Permission matrix
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          ZONE_NAME: wenkai5.cc
+        run: |
+          check() { # $1=label $2=result-json
+            if echo "$2" | jq -e '.success == true' > /dev/null 2>&1; then
+              echo "✅ $1"
+            else
+              echo "❌ $1 — $(echo "$2" | jq -c '.errors' 2>/dev/null || echo '無法解析回應')"
+            fi
+          }
+
+          echo "=== 1) token 本身是否有效 ==="
+          V=$(curl -sS "https://api.cloudflare.com/client/v4/user/tokens/verify" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}")
+          check "token verify" "$V"
+          echo "$V" | jq '.result | {id, status}' 2>/dev/null || true
+          echo "（把上面的 token id 跟 Dashboard 裡你編輯的那顆對照——id 不同就是改錯顆）"
+
+          echo "=== 2) Pages 專案讀取（Pages 權限） ==="
+          P=$(curl -sS "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/pages/projects/new-bibble" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}")
+          check "Pages read" "$P"
+
+          echo "=== 3) Zone 讀取（Zone:Read） ==="
+          Z=$(curl -sS "https://api.cloudflare.com/client/v4/zones?name=${ZONE_NAME}" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}")
+          check "Zone read" "$Z"
+          ZONE_ID=$(echo "$Z" | jq -r '.result[0].id // empty')
+          [ -z "$ZONE_ID" ] && { echo "拿不到 zone id，後續 DNS 測試跳過"; exit 0; }
+
+          echo "=== 4) DNS 讀取（DNS:Read 或 DNS:Edit） ==="
+          R=$(curl -sS "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/dns_records?per_page=5" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}")
+          check "DNS read" "$R"
+          echo "$R" | jq -r '.result[]? | "  現有紀錄: \(.type) \(.name) → \(.content)"' 2>/dev/null || true
+
+          echo "=== 5) DNS 寫入（DNS:Edit）— 建一筆測試 TXT 再刪掉 ==="
+          W=$(curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/dns_records" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data "{\"type\":\"TXT\",\"name\":\"_token-perm-test.${ZONE_NAME}\",\"content\":\"perm-test\",\"ttl\":60}")
+          check "DNS write" "$W"
+          REC_ID=$(echo "$W" | jq -r '.result.id // empty')
+          if [ -n "$REC_ID" ]; then
+            D=$(curl -sS -X DELETE "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/dns_records/${REC_ID}" \
+              -H "Authorization: Bearer ${CF_API_TOKEN}")
+            check "測試紀錄已清除" "$D"
+          fi
