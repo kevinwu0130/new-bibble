@@ -1,0 +1,63 @@
+name: Remove custom domain
+
+on:
+  workflow_dispatch:
+    inputs:
+      domain:
+        description: '要移除的網域（如 wenkai5.cc 或 bubble.wenkai5.cc）'
+        required: true
+
+jobs:
+  remove-domain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Detach domain from Pages project
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          DOMAIN: ${{ inputs.domain }}
+        run: |
+          set -e
+          RES=$(curl -sS -X DELETE \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}/pages/projects/new-bibble/domains/${DOMAIN}" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}")
+          echo "$RES" | jq .
+          if echo "$RES" | jq -e '.success == true' > /dev/null; then
+            echo "✅ domain detached from Pages project"
+          elif echo "$RES" | jq -e '.errors[]?.message | test("not found|10007")' > /dev/null; then
+            echo "ℹ️ domain was not attached — continuing"
+          else
+            echo "⚠️ detach failed, continuing to DNS cleanup anyway"
+          fi
+
+      - name: Delete DNS record
+        env:
+          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          DOMAIN: ${{ inputs.domain }}
+        run: |
+          set -e
+          ZONE_NAME=$(echo "$DOMAIN" | awk -F. '{print $(NF-1)"."$NF}')
+          ZONES=$(curl -sS "https://api.cloudflare.com/client/v4/zones?name=${ZONE_NAME}" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}")
+          ZONE_ID=$(echo "$ZONES" | jq -r '.result[0].id // empty')
+          if [ -z "$ZONE_ID" ]; then
+            echo "⚠️ 無法讀取 zone，請手動到 Dashboard 刪除 ${DOMAIN} 的 DNS 紀錄"
+            exit 0
+          fi
+          RECORDS=$(curl -sS "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/dns_records?name=${DOMAIN}" \
+            -H "Authorization: Bearer ${CF_API_TOKEN}")
+          COUNT=$(echo "$RECORDS" | jq '.result | length')
+          if [ "$COUNT" -eq 0 ]; then
+            echo "ℹ️ 沒有找到 ${DOMAIN} 的 DNS 紀錄，可能已經刪除過"
+            exit 0
+          fi
+          for id in $(echo "$RECORDS" | jq -r '.result[].id'); do
+            D=$(curl -sS -X DELETE "https://api.cloudflare.com/client/v4/zones/${ZONE_ID}/dns_records/${id}" \
+              -H "Authorization: Bearer ${CF_API_TOKEN}")
+            if echo "$D" | jq -e '.success == true' > /dev/null; then
+              echo "✅ DNS record ${id} deleted"
+            else
+              echo "⚠️ failed to delete record ${id}"
+              echo "$D" | jq .
+            fi
+          done
