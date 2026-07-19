@@ -1,0 +1,113 @@
+{
+  "bookId": "john",
+  "chapter": 4,
+  "titleZh": "撒馬利亞婦人：井旁的活水",
+  "period": {
+    "id": "jesus_ministry_early",
+    "name": "耶穌傳道初期",
+    "yearRange": [
+      27,
+      28
+    ],
+    "mapCenter": [
+      35.28,
+      32.35
+    ],
+    "mapZoom": 9
+  },
+  "note": "「必須經過撒瑪利亞」——猶太人一般會繞道而行，耶穌卻直接穿越，路線本身就是打破猶太人與撒瑪利亞人隔閡的神學宣告。",
+  "highlights": {
+    "3": [
+      {
+        "anchorText": "猶太",
+        "entityId": "judea"
+      }
+    ],
+    "4": [
+      {
+        "anchorText": "撒瑪利亞",
+        "entityId": "samaria_region"
+      }
+    ],
+    "5": [
+      {
+        "anchorText": "敘加",
+        "entityId": "sychar"
+      }
+    ],
+    "6": [
+      {
+        "anchorText": "雅各井",
+        "entityId": "jacobs_well"
+      }
+    ],
+    "43": [
+      {
+        "anchorText": "加利利",
+        "entityId": "galilee"
+      }
+    ]
+  },
+  "entities": {
+    "judea": {
+      "name": "猶太（出發）",
+      "type": "place",
+      "lat": 31.9,
+      "lng": 35.2
+    },
+    "samaria_region": {
+      "name": "撒瑪利亞地區",
+      "type": "place",
+      "lat": 32.21,
+      "lng": 35.28
+    },
+    "sychar": {
+      "name": "敘加",
+      "type": "place",
+      "lat": 32.2137,
+      "lng": 35.2728
+    },
+    "jacobs_well": {
+      "name": "雅各井",
+      "type": "place",
+      "lat": 32.2128,
+      "lng": 35.2749
+    },
+    "galilee": {
+      "name": "加利利（目的地）",
+      "type": "place",
+      "lat": 32.75,
+      "lng": 35.4
+    }
+  },
+  "route": {
+    "id": "samaritan_woman_journey",
+    "label": "猶太 → 撒瑪利亞（敘加）→ 加利利",
+    "path": [
+      {
+        "name": "猶太",
+        "lat": 31.9,
+        "lng": 35.2,
+        "verseAnchor": 3
+      },
+      {
+        "name": "敘加",
+        "lat": 32.2137,
+        "lng": 35.2728,
+        "verseAnchor": 5
+      },
+      {
+        "name": "雅各井",
+        "lat": 32.2128,
+        "lng": 35.2749,
+        "verseAnchor": 6
+      },
+      {
+        "name": "加利利",
+        "lat": 32.75,
+        "lng": 35.4,
+        "verseAnchor": 43
+      }
+    ]
+  }
+}

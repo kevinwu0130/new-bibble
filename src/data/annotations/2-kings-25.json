@@ -1,0 +1,101 @@
+{
+  "bookId": "2-kings",
+  "chapter": 25,
+  "titleZh": "耶路撒冷淪陷：被擄巴比倫",
+  "period": {
+    "id": "babylonian_exile",
+    "name": "巴比倫擄掠時期",
+    "yearRange": [
+      -587,
+      -586
+    ],
+    "mapCenter": [
+      39,
+      33.5
+    ],
+    "mapZoom": 4.6
+  },
+  "note": "從耶路撒冷圍城，到西底家在耶利哥平原被擒、於利比拉受審，最終全族被擄往巴比倫——路線跨越近一千公里，是猶大亡國的地理見證。",
+  "highlights": {
+    "1": [
+      {
+        "anchorText": "耶路撒冷",
+        "entityId": "jerusalem"
+      }
+    ],
+    "5": [
+      {
+        "anchorText": "耶利哥",
+        "entityId": "jericho"
+      }
+    ],
+    "6": [
+      {
+        "anchorText": "利比拉",
+        "entityId": "riblah"
+      }
+    ],
+    "7": [
+      {
+        "anchorText": "巴比倫",
+        "entityId": "babylon"
+      }
+    ]
+  },
+  "entities": {
+    "jerusalem": {
+      "name": "耶路撒冷（圍城）",
+      "type": "place",
+      "lat": 31.7784,
+      "lng": 35.2354
+    },
+    "jericho": {
+      "name": "耶利哥（西底家被擒）",
+      "type": "place",
+      "lat": 31.8667,
+      "lng": 35.4442
+    },
+    "riblah": {
+      "name": "利比拉（受審處）",
+      "type": "place",
+      "lat": 34.4667,
+      "lng": 36.5333
+    },
+    "babylon": {
+      "name": "巴比倫（被擄之地）",
+      "type": "place",
+      "lat": 32.5355,
+      "lng": 44.4275
+    }
+  },
+  "route": {
+    "id": "fall_of_jerusalem",
+    "label": "耶路撒冷 → 耶利哥 → 利比拉 → 巴比倫",
+    "path": [
+      {
+        "name": "耶路撒冷",
+        "lat": 31.7784,
+        "lng": 35.2354,
+        "verseAnchor": 1
+      },
+      {
+        "name": "耶利哥",
+        "lat": 31.8667,
+        "lng": 35.4442,
+        "verseAnchor": 5
+      },
+      {
+        "name": "利比拉",
+        "lat": 34.4667,
+        "lng": 36.5333,
+        "verseAnchor": 6
+      },
+      {
+        "name": "巴比倫",
+        "lat": 32.5355,
+        "lng": 44.4275,
+        "verseAnchor": 7
+      }
+    ]
+  }
+}

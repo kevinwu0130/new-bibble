@@ -1,0 +1,209 @@
+{
+  "bookId": "numbers",
+  "chapter": 33,
+  "titleZh": "出埃及全程：曠野四十年站口",
+  "period": {
+    "id": "exodus_wilderness",
+    "name": "出埃及曠野漂流時期",
+    "yearRange": [
+      -1446,
+      -1406
+    ],
+    "mapCenter": [
+      33.6,
+      30.2
+    ],
+    "mapZoom": 5.3
+  },
+  "note": "本章記載 42 個站口，此處僅標示學界較普遍採用的 10 個代表性站點；多數站口確切位置在考古學上仍有爭議，座標僅供示意路線參考。",
+  "highlights": {
+    "3": [
+      {
+        "anchorText": "蘭塞",
+        "entityId": "rameses"
+      }
+    ],
+    "6": [
+      {
+        "anchorText": "以倘",
+        "entityId": "etham"
+      }
+    ],
+    "7": [
+      {
+        "anchorText": "比哈希錄",
+        "entityId": "pi_hahiroth"
+      }
+    ],
+    "8": [
+      {
+        "anchorText": "瑪拉",
+        "entityId": "marah"
+      }
+    ],
+    "9": [
+      {
+        "anchorText": "以琳",
+        "entityId": "elim"
+      }
+    ],
+    "11": [
+      {
+        "anchorText": "汛的曠野",
+        "entityId": "wilderness_of_sin"
+      }
+    ],
+    "15": [
+      {
+        "anchorText": "西乃的曠野",
+        "entityId": "sinai"
+      }
+    ],
+    "36": [
+      {
+        "anchorText": "加低斯",
+        "entityId": "kadesh"
+      }
+    ],
+    "37": [
+      {
+        "anchorText": "何珥山",
+        "entityId": "mount_hor"
+      }
+    ],
+    "48": [
+      {
+        "anchorText": "摩押平原",
+        "entityId": "plains_of_moab"
+      }
+    ]
+  },
+  "entities": {
+    "rameses": {
+      "name": "蘭塞（出發點）",
+      "type": "place",
+      "lat": 30.8,
+      "lng": 31.82
+    },
+    "etham": {
+      "name": "以倘",
+      "type": "place",
+      "lat": 30.4,
+      "lng": 32.3
+    },
+    "pi_hahiroth": {
+      "name": "比哈希錄",
+      "type": "place",
+      "lat": 29.95,
+      "lng": 32.55
+    },
+    "marah": {
+      "name": "瑪拉（苦水變甜）",
+      "type": "place",
+      "lat": 29.198,
+      "lng": 32.972
+    },
+    "elim": {
+      "name": "以琳（十二泉七十棕樹）",
+      "type": "place",
+      "lat": 29.064,
+      "lng": 33.058
+    },
+    "wilderness_of_sin": {
+      "name": "汛的曠野（嗎哪初降）",
+      "type": "place",
+      "lat": 28.973,
+      "lng": 33.33
+    },
+    "sinai": {
+      "name": "西乃的曠野（頒布律法）",
+      "type": "place",
+      "lat": 28.539,
+      "lng": 33.973
+    },
+    "kadesh": {
+      "name": "加低斯（探子回報處）",
+      "type": "place",
+      "lat": 30.687,
+      "lng": 34.417
+    },
+    "mount_hor": {
+      "name": "何珥山（亞倫安葬處）",
+      "type": "place",
+      "lat": 30.322,
+      "lng": 35.4
+    },
+    "plains_of_moab": {
+      "name": "摩押平原（約但河東，耶利哥對面）",
+      "type": "place",
+      "lat": 31.85,
+      "lng": 35.6
+    }
+  },
+  "route": {
+    "id": "exodus_full_journey",
+    "label": "出埃及全程路線（蘭塞 → 摩押平原）",
+    "path": [
+      {
+        "name": "蘭塞",
+        "lat": 30.8,
+        "lng": 31.82,
+        "verseAnchor": 3
+      },
+      {
+        "name": "以倘",
+        "lat": 30.4,
+        "lng": 32.3,
+        "verseAnchor": 6
+      },
+      {
+        "name": "比哈希錄",
+        "lat": 29.95,
+        "lng": 32.55,
+        "verseAnchor": 7
+      },
+      {
+        "name": "瑪拉",
+        "lat": 29.198,
+        "lng": 32.972,
+        "verseAnchor": 8
+      },
+      {
+        "name": "以琳",
+        "lat": 29.064,
+        "lng": 33.058,
+        "verseAnchor": 9
+      },
+      {
+        "name": "汛的曠野",
+        "lat": 28.973,
+        "lng": 33.33,
+        "verseAnchor": 11
+      },
+      {
+        "name": "西乃的曠野",
+        "lat": 28.539,
+        "lng": 33.973,
+        "verseAnchor": 15
+      },
+      {
+        "name": "加低斯",
+        "lat": 30.687,
+        "lng": 34.417,
+        "verseAnchor": 36
+      },
+      {
+        "name": "何珥山",
+        "lat": 30.322,
+        "lng": 35.4,
+        "verseAnchor": 37
+      },
+      {
+        "name": "摩押平原",
+        "lat": 31.85,
+        "lng": 35.6,
+        "verseAnchor": 48
+      }
+    ]
+  }
+}

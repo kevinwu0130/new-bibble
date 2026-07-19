@@ -1,0 +1,101 @@
+{
+  "bookId": "1-kings",
+  "chapter": 18,
+  "titleZh": "以利亞迦密山對決",
+  "period": {
+    "id": "divided_kingdom_elijah",
+    "name": "北國以色列 - 以利亞先知時期",
+    "yearRange": [
+      -870,
+      -850
+    ],
+    "mapCenter": [
+      35.1,
+      32.5
+    ],
+    "mapZoom": 8.5
+  },
+  "note": "迦密山對決後，以利亞在基順河邊處死巴力先知，亞哈則坐車趕往耶斯列——三個地點的距離感，正是這場屬靈爭戰的地理張力。",
+  "highlights": {
+    "2": [
+      {
+        "anchorText": "撒瑪利亞",
+        "entityId": "samaria"
+      }
+    ],
+    "19": [
+      {
+        "anchorText": "迦密山",
+        "entityId": "mount_carmel"
+      }
+    ],
+    "40": [
+      {
+        "anchorText": "基順河",
+        "entityId": "kishon"
+      }
+    ],
+    "45": [
+      {
+        "anchorText": "耶斯列",
+        "entityId": "jezreel"
+      }
+    ]
+  },
+  "entities": {
+    "samaria": {
+      "name": "撒瑪利亞（大饑荒）",
+      "type": "place",
+      "lat": 32.2775,
+      "lng": 35.1957
+    },
+    "mount_carmel": {
+      "name": "迦密山（對決現場）",
+      "type": "place",
+      "lat": 32.7267,
+      "lng": 34.9692
+    },
+    "kishon": {
+      "name": "基順河（處死假先知）",
+      "type": "place",
+      "lat": 32.7,
+      "lng": 35.05
+    },
+    "jezreel": {
+      "name": "耶斯列（亞哈駕車而去）",
+      "type": "place",
+      "lat": 32.5706,
+      "lng": 35.325
+    }
+  },
+  "route": {
+    "id": "elijah_carmel",
+    "label": "撒瑪利亞 → 迦密山 → 基順河 → 耶斯列",
+    "path": [
+      {
+        "name": "撒瑪利亞",
+        "lat": 32.2775,
+        "lng": 35.1957,
+        "verseAnchor": 2
+      },
+      {
+        "name": "迦密山",
+        "lat": 32.7267,
+        "lng": 34.9692,
+        "verseAnchor": 19
+      },
+      {
+        "name": "基順河",
+        "lat": 32.7,
+        "lng": 35.05,
+        "verseAnchor": 40
+      },
+      {
+        "name": "耶斯列",
+        "lat": 32.5706,
+        "lng": 35.325,
+        "verseAnchor": 45
+      }
+    ]
+  }
+}

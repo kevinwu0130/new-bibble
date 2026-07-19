@@ -1,0 +1,117 @@
+{
+  "bookId": "matthew",
+  "chapter": 2,
+  "titleZh": "博士來朝與逃往埃及",
+  "period": {
+    "id": "jesus_birth",
+    "name": "耶穌降生",
+    "yearRange": [
+      -6,
+      -4
+    ],
+    "mapCenter": [
+      33.5,
+      32.3
+    ],
+    "mapZoom": 6
+  },
+  "note": "博士循星象從東方而來，聖家卻為躲避希律而逃往埃及——同一片土地上，敬拜與逃亡交織。",
+  "highlights": {
+    "1": [
+      {
+        "anchorText": "伯利恆",
+        "entityId": "bethlehem"
+      },
+      {
+        "anchorText": "耶路撒冷",
+        "entityId": "jerusalem"
+      }
+    ],
+    "8": [
+      {
+        "anchorText": "伯利恆",
+        "entityId": "bethlehem"
+      }
+    ],
+    "14": [
+      {
+        "anchorText": "埃及",
+        "entityId": "egypt"
+      }
+    ],
+    "18": [
+      {
+        "anchorText": "拉瑪",
+        "entityId": "ramah"
+      }
+    ],
+    "23": [
+      {
+        "anchorText": "拿撒勒",
+        "entityId": "nazareth"
+      }
+    ]
+  },
+  "entities": {
+    "jerusalem": {
+      "name": "耶路撒冷",
+      "type": "place",
+      "lat": 31.7784,
+      "lng": 35.2354
+    },
+    "bethlehem": {
+      "name": "伯利恆（耶穌誕生地）",
+      "type": "place",
+      "lat": 31.7054,
+      "lng": 35.2024
+    },
+    "ramah": {
+      "name": "拉瑪（拉結哭子的預言）",
+      "type": "place",
+      "lat": 31.8672,
+      "lng": 35.2144
+    },
+    "egypt": {
+      "name": "埃及（避難處）",
+      "type": "place",
+      "lat": 30.05,
+      "lng": 31.23
+    },
+    "nazareth": {
+      "name": "拿撒勒（定居處）",
+      "type": "place",
+      "lat": 32.7018,
+      "lng": 35.2973
+    }
+  },
+  "route": {
+    "id": "magi_flight_to_egypt",
+    "label": "耶路撒冷 → 伯利恆 → 埃及 → 拿撒勒",
+    "path": [
+      {
+        "name": "耶路撒冷",
+        "lat": 31.7784,
+        "lng": 35.2354,
+        "verseAnchor": 1
+      },
+      {
+        "name": "伯利恆",
+        "lat": 31.7054,
+        "lng": 35.2024,
+        "verseAnchor": 1
+      },
+      {
+        "name": "埃及",
+        "lat": 30.05,
+        "lng": 31.23,
+        "verseAnchor": 14
+      },
+      {
+        "name": "拿撒勒",
+        "lat": 32.7018,
+        "lng": 35.2973,
+        "verseAnchor": 23
+      }
+    ]
+  }
+}

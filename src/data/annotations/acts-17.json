@@ -1,0 +1,101 @@
+{
+  "bookId": "acts",
+  "chapter": 17,
+  "titleZh": "雅典亞略巴古：未識之神",
+  "period": {
+    "id": "roman_empire_paul_2nd_journey",
+    "name": "羅馬帝國 - 保羅第二次宣教",
+    "yearRange": [
+      49,
+      51
+    ],
+    "mapCenter": [
+      23.3,
+      39.3
+    ],
+    "mapZoom": 6
+  },
+  "note": "從帖撒羅尼迦到庇哩亞再到雅典，保羅一路被猶太人追趕驅逐，最終在雅典的亞略巴古向哲學之都宣講「未識之神」。",
+  "highlights": {
+    "1": [
+      {
+        "anchorText": "帖撒羅尼迦",
+        "entityId": "thessalonica"
+      }
+    ],
+    "10": [
+      {
+        "anchorText": "庇哩亞",
+        "entityId": "berea"
+      }
+    ],
+    "15": [
+      {
+        "anchorText": "雅典",
+        "entityId": "athens"
+      }
+    ],
+    "19": [
+      {
+        "anchorText": "亞略巴古",
+        "entityId": "areopagus"
+      }
+    ]
+  },
+  "entities": {
+    "thessalonica": {
+      "name": "帖撒羅尼迦",
+      "type": "place",
+      "lat": 40.6401,
+      "lng": 22.9444
+    },
+    "berea": {
+      "name": "庇哩亞",
+      "type": "place",
+      "lat": 40.5297,
+      "lng": 22.201
+    },
+    "athens": {
+      "name": "雅典",
+      "type": "place",
+      "lat": 37.9838,
+      "lng": 23.7275
+    },
+    "areopagus": {
+      "name": "亞略巴古（講道處）",
+      "type": "place",
+      "lat": 37.9715,
+      "lng": 23.7257
+    }
+  },
+  "route": {
+    "id": "paul_2nd_journey_athens",
+    "label": "帖撒羅尼迦 → 庇哩亞 → 雅典 → 亞略巴古",
+    "path": [
+      {
+        "name": "帖撒羅尼迦",
+        "lat": 40.6401,
+        "lng": 22.9444,
+        "verseAnchor": 1
+      },
+      {
+        "name": "庇哩亞",
+        "lat": 40.5297,
+        "lng": 22.201,
+        "verseAnchor": 10
+      },
+      {
+        "name": "雅典",
+        "lat": 37.9838,
+        "lng": 23.7275,
+        "verseAnchor": 15
+      },
+      {
+        "name": "亞略巴古",
+        "lat": 37.9715,
+        "lng": 23.7257,
+        "verseAnchor": 19
+      }
+    ]
+  }
+}
