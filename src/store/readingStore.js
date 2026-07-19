@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import bookIndex from '../data/bookIndex.json'
+import { saveLastPosition } from './readingProgress'
 
 // 66 卷書依需要動態載入（每卷一個 chunk），註解層很小所以直接打包
 const bookModules = import.meta.glob('../data/books/*.json')
@@ -46,6 +47,7 @@ export const useReadingStore = create((set) => ({
     if (seq !== loadSeq) return // 載入期間又切換了，放棄這次結果
     const ch = Math.min(Math.max(1, chapter), data.chapters.length)
     set({ activeBookId: bookId, activeChapter: ch, bookData: data, loading: false })
+    saveLastPosition(bookId, ch)
   },
 
   setActiveEntity: (entityId) => set({ activeEntityId: entityId }),
