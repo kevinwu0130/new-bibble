@@ -31,9 +31,10 @@ async function loadBook(bookId) {
 
 let loadSeq = 0
 
-export const useReadingStore = create((set, get) => ({
-  activeBookId: 'exodus',
-  activeChapter: 14,
+// 目前位置由網址驅動（見 App.jsx 的路由同步），這裡不預設書卷/章節
+export const useReadingStore = create((set) => ({
+  activeBookId: null,
+  activeChapter: null,
   activeEntityId: null,
   bookData: null,
   loading: true,
@@ -47,16 +48,5 @@ export const useReadingStore = create((set, get) => ({
     set({ activeBookId: bookId, activeChapter: ch, bookData: data, loading: false })
   },
 
-  stepChapter: (delta) => {
-    const { activeChapter, bookData } = get()
-    if (!bookData) return
-    const next = activeChapter + delta
-    if (next < 1 || next > bookData.chapters.length) return
-    set({ activeChapter: next, activeEntityId: null })
-  },
-
   setActiveEntity: (entityId) => set({ activeEntityId: entityId }),
 }))
-
-// 初始載入預設章節
-useReadingStore.getState().setLocation('exodus', 14)
