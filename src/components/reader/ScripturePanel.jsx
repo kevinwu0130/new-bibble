@@ -7,6 +7,8 @@ export default function ScripturePanel() {
   const activeBookId = useReadingStore((s) => s.activeBookId)
   const activeChapter = useReadingStore((s) => s.activeChapter)
   const bookData = useReadingStore((s) => s.bookData)
+  const webBookData = useReadingStore((s) => s.webBookData)
+  const translationMode = useReadingStore((s) => s.translationMode)
   const loading = useReadingStore((s) => s.loading)
   const location = useLocation()
   const scrolledKeyRef = useRef(null)
@@ -33,10 +35,15 @@ export default function ScripturePanel() {
 
   const meta = getBookMeta(activeBookId)
   const anno = getAnnotation(activeBookId, activeChapter)
+  const showParallel = translationMode === 'parallel' && !!webBookData
+  const englishVerseMap = showParallel
+    ? new Map(webBookData.chapters[activeChapter - 1] || [])
+    : null
   const verses = bookData.chapters[activeChapter - 1].map(([verse, text]) => ({
     verse,
     text,
     highlights: anno?.highlights?.[verse] || [],
+    englishText: englishVerseMap?.get(verse) || null,
   }))
 
   return (
@@ -45,7 +52,7 @@ export default function ScripturePanel() {
         {anno?.titleZh || `${meta.name} 第 ${activeChapter} 章`}
       </h1>
       <p className="text-sm text-gray-400 mb-1">
-        {meta.name} {activeChapter} 章 · 和合本
+        {meta.name} {activeChapter} 章 · 和合本{showParallel ? ' + WEB 英文' : ''}
         {anno?.period ? ` · ${anno.period.name}` : ''}
       </p>
       {anno?.note && (
