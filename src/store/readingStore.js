@@ -30,6 +30,11 @@ async function loadBook(bookId) {
   return mod.default
 }
 
+// 供全文搜尋使用：載入全部 66 卷（沿用同一份 bookCache，不重複下載）
+export async function loadAllBooks() {
+  return Promise.all(bookIndex.map(async (meta) => ({ meta, data: await loadBook(meta.id) })))
+}
+
 let loadSeq = 0
 
 // 目前位置由網址驅動（見 App.jsx 的路由同步），這裡不預設書卷/章節
