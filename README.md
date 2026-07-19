@@ -9,6 +9,11 @@
   - `src/data/books/` — 每卷一個 JSON，依需要動態載入
   - `src/data/bookIndex.json` — 66 卷目錄（名稱／縮寫／章數）
 - **地圖註解**：`src/data/annotations/` — 含高亮實體、座標與路線的章節（目前 20 章），逐步擴充
+- **英文對照（WEB）**：World English Bible，公有領域譯本
+  - 來源：npm 套件 [`world-english-bible`](https://www.npmjs.com/package/world-english-bible)，文本取自 [ebible.org/web](http://ebible.org/web/)
+  - `src/data/books-web/` — 每卷一個 JSON，結構與 `books/` 相同，同樣依需要動態載入
+  - 導覽列「版本」切換「和合本」/「中英對照（WEB）」，選擇會存在 localStorage
+  - ⚠️ **現代中文譯本未收錄**：該譯本版權屬聯合聖經公會/香港聖經公會所有，非公有領域，未取得授權前不會內嵌全文
 - **AI 章節插圖**：沒有地圖標註的章節，由 Workers AI 產生該章插圖
   - `functions/api/illustration.js`：讀取順序為邊緣快取 → KV（`ILLUSTRATIONS` binding，永久儲存、全球共用）→ 都沒有才呼叫 Llama 3.1 寫場景描述 + FLUX schnell 產圖；產生成功會同時寫回 KV 與快取，之後同一章不再耗用 AI 額度
   - 需 `wrangler.toml` 的 `[ai]` binding（Pages 上免金鑰）與 `[[kv_namespaces]]` 的 `ILLUSTRATIONS` binding

@@ -30,26 +30,31 @@ export default function VerseLine({ verse }) {
   const segments = splitByHighlights(verse.text, verse.highlights)
 
   return (
-    <p id={`verse-${verse.verse}`} className="leading-relaxed text-gray-800 mb-3">
-      <span className="text-xs align-super text-gray-400 mr-1">{verse.verse}</span>
-      {segments.map((seg, i) =>
-        seg.entityId ? (
-          <span
-            key={i}
-            onMouseEnter={() => setActiveEntity(seg.entityId)}
-            onClick={() => setActiveEntity(seg.entityId)}
-            className={`cursor-pointer rounded px-0.5 transition-colors ${
-              activeEntityId === seg.entityId
-                ? 'bg-amber-300'
-                : 'bg-amber-100 hover:bg-amber-200'
-            }`}
-          >
-            {seg.text}
-          </span>
-        ) : (
-          <span key={i}>{seg.text}</span>
-        )
+    <div id={`verse-${verse.verse}`} className="mb-3">
+      <p className="leading-relaxed text-gray-800">
+        <span className="text-xs align-super text-gray-400 mr-1">{verse.verse}</span>
+        {segments.map((seg, i) =>
+          seg.entityId ? (
+            <span
+              key={i}
+              onMouseEnter={() => setActiveEntity(seg.entityId)}
+              onClick={() => setActiveEntity(seg.entityId)}
+              className={`cursor-pointer rounded px-0.5 transition-colors ${
+                activeEntityId === seg.entityId
+                  ? 'bg-amber-300'
+                  : 'bg-amber-100 hover:bg-amber-200'
+              }`}
+            >
+              {seg.text}
+            </span>
+          ) : (
+            <span key={i}>{seg.text}</span>
+          )
+        )}
+      </p>
+      {verse.englishText && (
+        <p className="leading-snug text-gray-400 text-sm italic mt-0.5">{verse.englishText}</p>
       )}
-    </p>
+    </div>
   )
 }

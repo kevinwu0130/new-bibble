@@ -1,9 +1,11 @@
 import { create } from 'zustand'
 import bookIndex from '../data/bookIndex.json'
 import { saveLastPosition } from './readingProgress'
+import { loadTranslationMode, saveTranslationMode } from './translationPreference'
 
 // 66 卷書依需要動態載入（每卷一個 chunk），註解層很小所以直接打包
 const bookModules = import.meta.glob('../data/books/*.json')
+const webBookModules = import.meta.glob('../data/books-web/*.json')
 const annoModules = import.meta.glob('../data/annotations/*.json', { eager: true })
 
 export const BOOKS = bookIndex
@@ -20,6 +22,7 @@ export const getBookMeta = (bookId) => bookIndex.find((b) => b.id === bookId)
 export const getAnnotation = (bookId, chapter) => ANNOTATIONS[`${bookId}-${chapter}`] || null
 
 const bookCache = {}
+const webBookCache = {}
 
 async function loadBook(bookId) {
   if (bookCache[bookId]) return bookCache[bookId]
@@ -27,6 +30,16 @@ async function loadBook(bookId) {
   const path = `../data/books/${String(meta.order).padStart(2, '0')}-${meta.id}.json`
   const mod = await bookModules[path]()
   bookCache[bookId] = mod.default
+  return mod.default
+}
+
+// WEB（World English Bible）：公有領域英文譯本，供中英對照使用
+async function loadWebBook(bookId) {
+  if (webBookCache[bookId]) return webBookCache[bookId]
+  const meta = getBookMeta(bookId)
+  const path = `../data/books-web/${String(meta.order).padStart(2, '0')}-${meta.id}.json`
+  const mod = await webBookModules[path]()
+  webBookCache[bookId] = mod.default
   return mod.default
 }
 
@@ -38,21 +51,38 @@ export async function loadAllBooks() {
 let loadSeq = 0
 
 // 目前位置由網址驅動（見 App.jsx 的路由同步），這裡不預設書卷/章節
-export const useReadingStore = create((set) => ({
+export const useReadingStore = create((set, get) => ({
   activeBookId: null,
   activeChapter: null,
   activeEntityId: null,
   bookData: null,
+  webBookData: null,
+  translationMode: loadTranslationMode(), // 'cuv' | 'parallel'
   loading: true,
 
   setLocation: async (bookId, chapter) => {
     const seq = ++loadSeq
     set({ loading: true, activeEntityId: null })
-    const data = await loadBook(bookId)
+    const wantWeb = get().translationMode === 'parallel'
+    const [data, webData] = await Promise.all([
+      loadBook(bookId),
+      wantWeb ? loadWebBook(bookId) : Promise.resolve(null),
+    ])
     if (seq !== loadSeq) return // 載入期間又切換了，放棄這次結果
     const ch = Math.min(Math.max(1, chapter), data.chapters.length)
-    set({ activeBookId: bookId, activeChapter: ch, bookData: data, loading: false })
+    set({ activeBookId: bookId, activeChapter: ch, bookData: data, webBookData: webData, loading: false })
     saveLastPosition(bookId, ch)
+  },
+
+  setTranslationMode: async (mode) => {
+    set({ translationMode: mode })
+    saveTranslationMode(mode)
+    const { activeBookId, webBookData } = get()
+    if (mode === 'parallel' && activeBookId && !webBookData) {
+      const data = await loadWebBook(activeBookId)
+      // 切換期間使用者又換了書卷才略過（用 activeBookId 是否仍相同判斷）
+      if (get().activeBookId === activeBookId) set({ webBookData: data })
+    }
   },
 
   setActiveEntity: (entityId) => set({ activeEntityId: entityId }),

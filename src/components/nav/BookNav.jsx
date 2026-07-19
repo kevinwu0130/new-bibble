@@ -10,6 +10,8 @@ export default function BookNav() {
   const navigate = useNavigate()
   const activeBookId = useReadingStore((s) => s.activeBookId)
   const activeChapter = useReadingStore((s) => s.activeChapter)
+  const translationMode = useReadingStore((s) => s.translationMode)
+  const setTranslationMode = useReadingStore((s) => s.setTranslationMode)
   const [searchOpen, setSearchOpen] = useState(false)
 
   const meta = getBookMeta(activeBookId)
@@ -107,6 +109,30 @@ export default function BookNav() {
             </button>
           )
         })}
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <span className="text-xs text-gray-400">版本：</span>
+        <button
+          onClick={() => setTranslationMode('cuv')}
+          className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${
+            translationMode === 'cuv'
+              ? 'bg-indigo-600 text-white'
+              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+          }`}
+        >
+          和合本
+        </button>
+        <button
+          onClick={() => setTranslationMode('parallel')}
+          className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${
+            translationMode === 'parallel'
+              ? 'bg-indigo-600 text-white'
+              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+          }`}
+        >
+          中英對照（WEB）
+        </button>
       </div>
 
       {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
