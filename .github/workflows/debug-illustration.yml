@@ -1,0 +1,29 @@
+name: Debug illustration endpoint
+
+on:
+  workflow_dispatch:
+    inputs:
+      book:
+        description: '書卷 id'
+        required: true
+        default: 'genesis'
+      chapter:
+        description: '章數'
+        required: true
+        default: '50'
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call illustration endpoint and print full response
+        run: |
+          echo "=== Request ==="
+          echo "GET https://bible.wenkai5.cc/api/illustration?book=${{ inputs.book }}&chapter=${{ inputs.chapter }}"
+          echo "=== Response headers ==="
+          curl -sS -D - -o /tmp/body "https://bible.wenkai5.cc/api/illustration?book=${{ inputs.book }}&chapter=${{ inputs.chapter }}"
+          echo "=== Response body (first 2000 bytes, as text) ==="
+          head -c 2000 /tmp/body
+          echo
+          echo "=== Body size ==="
+          wc -c /tmp/body
