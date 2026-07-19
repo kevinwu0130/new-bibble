@@ -30,7 +30,7 @@ export default function VerseLine({ verse }) {
   const segments = splitByHighlights(verse.text, verse.highlights)
 
   return (
-    <p className="leading-relaxed text-gray-800 mb-3">
+    <p id={`verse-${verse.verse}`} className="leading-relaxed text-gray-800 mb-3">
       <span className="text-xs align-super text-gray-400 mr-1">{verse.verse}</span>
       {segments.map((seg, i) =>
         seg.entityId ? (

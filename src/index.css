@@ -62,6 +62,16 @@ body {
   cursor: pointer;
 }
 
+/* 搜尋結果點入後，短暫高亮該節 */
+.verse-flash {
+  animation: verse-flash-anim 2s ease-out;
+  border-radius: 0.25rem;
+}
+@keyframes verse-flash-anim {
+  0% { background-color: #fde68a; }
+  100% { background-color: transparent; }
+}
+
 /* MapLibre 彈出視窗中文樣式 */
 .maplibregl-popup-content {
   font-family: 'Noto Sans TC', sans-serif;
