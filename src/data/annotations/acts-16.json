@@ -1,0 +1,99 @@
+{
+  "bookId": "acts",
+  "chapter": 16,
+  "titleZh": "跨海入歐：腓立比的呼聲",
+  "period": {
+    "id": "roman_empire_paul_2nd_journey",
+    "name": "羅馬帝國 - 保羅第二次宣教",
+    "yearRange": [
+      49,
+      51
+    ],
+    "mapCenter": [
+      25,
+      40.3
+    ],
+    "mapZoom": 5.6
+  },
+  "note": "「馬其頓人的呼聲」（16:9）是福音史上的關鍵轉折——保羅從此跨海進入歐洲，特羅亞到腓立比這一段航程改變了教會的版圖。",
+  "highlights": {
+    "8": [
+      {
+        "anchorText": "特羅亞",
+        "entityId": "troas"
+      }
+    ],
+    "11": [
+      {
+        "anchorText": "撒摩特喇",
+        "entityId": "samothrace"
+      },
+      {
+        "anchorText": "尼亞波利",
+        "entityId": "neapolis"
+      }
+    ],
+    "12": [
+      {
+        "anchorText": "腓立比",
+        "entityId": "philippi"
+      }
+    ]
+  },
+  "entities": {
+    "troas": {
+      "name": "特羅亞（異象發生處）",
+      "type": "place",
+      "lat": 39.7587,
+      "lng": 26.1543
+    },
+    "samothrace": {
+      "name": "撒摩特喇島",
+      "type": "place",
+      "lat": 40.5,
+      "lng": 25.53
+    },
+    "neapolis": {
+      "name": "尼亞波利",
+      "type": "place",
+      "lat": 40.9397,
+      "lng": 24.4004
+    },
+    "philippi": {
+      "name": "腓立比（歐洲首個教會）",
+      "type": "place",
+      "lat": 41.0138,
+      "lng": 24.2875
+    }
+  },
+  "route": {
+    "id": "paul_2nd_journey_to_europe",
+    "label": "特羅亞 → 撒摩特喇 → 尼亞波利 → 腓立比",
+    "path": [
+      {
+        "name": "特羅亞",
+        "lat": 39.7587,
+        "lng": 26.1543,
+        "verseAnchor": 8
+      },
+      {
+        "name": "撒摩特喇島",
+        "lat": 40.5,
+        "lng": 25.53,
+        "verseAnchor": 11
+      },
+      {
+        "name": "尼亞波利",
+        "lat": 40.9397,
+        "lng": 24.4004,
+        "verseAnchor": 11
+      },
+      {
+        "name": "腓立比",
+        "lat": 41.0138,
+        "lng": 24.2875,
+        "verseAnchor": 12
+      }
+    ]
+  }
+}

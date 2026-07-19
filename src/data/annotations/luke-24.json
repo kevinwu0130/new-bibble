@@ -1,0 +1,93 @@
+{
+  "bookId": "luke",
+  "chapter": 24,
+  "titleZh": "以馬忤斯之路",
+  "period": {
+    "id": "jesus_resurrection",
+    "name": "耶穌復活後顯現",
+    "yearRange": [
+      30,
+      30
+    ],
+    "mapCenter": [
+      35.15,
+      31.82
+    ],
+    "mapZoom": 10.5
+  },
+  "note": "以馬忤斯的確切位置學界有多個候選地點，此處採用傳統認定的位置示意；門徒認出耶穌後，同一晚趕回耶路撒冷報信。",
+  "highlights": {
+    "13": [
+      {
+        "anchorText": "耶路撒冷",
+        "entityId": "jerusalem"
+      },
+      {
+        "anchorText": "以馬忤斯",
+        "entityId": "emmaus"
+      }
+    ],
+    "33": [
+      {
+        "anchorText": "耶路撒冷",
+        "entityId": "jerusalem"
+      }
+    ],
+    "50": [
+      {
+        "anchorText": "伯大尼",
+        "entityId": "bethany"
+      }
+    ]
+  },
+  "entities": {
+    "jerusalem": {
+      "name": "耶路撒冷",
+      "type": "place",
+      "lat": 31.7784,
+      "lng": 35.2354
+    },
+    "emmaus": {
+      "name": "以馬忤斯（傳統認定位置）",
+      "type": "place",
+      "lat": 31.8664,
+      "lng": 35.1417
+    },
+    "bethany": {
+      "name": "伯大尼（升天處）",
+      "type": "place",
+      "lat": 31.7714,
+      "lng": 35.2556
+    }
+  },
+  "route": {
+    "id": "emmaus_road",
+    "label": "耶路撒冷 → 以馬忤斯 → 耶路撒冷 → 伯大尼",
+    "path": [
+      {
+        "name": "耶路撒冷（出發）",
+        "lat": 31.7784,
+        "lng": 35.2354,
+        "verseAnchor": 13
+      },
+      {
+        "name": "以馬忤斯",
+        "lat": 31.8664,
+        "lng": 35.1417,
+        "verseAnchor": 13
+      },
+      {
+        "name": "耶路撒冷（連夜趕回報信）",
+        "lat": 31.7834,
+        "lng": 35.2404,
+        "verseAnchor": 33
+      },
+      {
+        "name": "伯大尼",
+        "lat": 31.7714,
+        "lng": 35.2556,
+        "verseAnchor": 50
+      }
+    ]
+  }
+}
