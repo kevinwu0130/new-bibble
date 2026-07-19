@@ -1,13 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 import { BOOKS, ANNOTATIONS, getBookMeta, useReadingStore } from '../../store/readingStore'
 
 const OT_BOOKS = BOOKS.filter((b) => b.testament === 'OT')
 const NT_BOOKS = BOOKS.filter((b) => b.testament === 'NT')
 
 export default function BookNav() {
+  const navigate = useNavigate()
   const activeBookId = useReadingStore((s) => s.activeBookId)
   const activeChapter = useReadingStore((s) => s.activeChapter)
-  const setLocation = useReadingStore((s) => s.setLocation)
-  const stepChapter = useReadingStore((s) => s.stepChapter)
 
   const meta = getBookMeta(activeBookId)
   const chapterCount = meta?.chapterCount ?? 1
@@ -16,8 +16,8 @@ export default function BookNav() {
     <div className="p-3 border-b border-gray-200 bg-white sticky top-0 z-10 space-y-2">
       <div className="flex gap-2 items-center">
         <select
-          value={activeBookId}
-          onChange={(e) => setLocation(e.target.value, 1)}
+          value={activeBookId || ''}
+          onChange={(e) => navigate(`/${e.target.value}/1`)}
           className="flex-1 min-w-0 px-2 py-1.5 rounded-lg border border-gray-300 text-sm bg-white"
         >
           <optgroup label="舊約">
@@ -33,8 +33,8 @@ export default function BookNav() {
         </select>
 
         <select
-          value={activeChapter}
-          onChange={(e) => setLocation(activeBookId, Number(e.target.value))}
+          value={activeChapter || 1}
+          onChange={(e) => navigate(`/${activeBookId}/${Number(e.target.value)}`)}
           className="px-2 py-1.5 rounded-lg border border-gray-300 text-sm bg-white"
         >
           {Array.from({ length: chapterCount }, (_, i) => (
@@ -43,7 +43,7 @@ export default function BookNav() {
         </select>
 
         <button
-          onClick={() => stepChapter(-1)}
+          onClick={() => navigate(`/${activeBookId}/${activeChapter - 1}`)}
           disabled={activeChapter <= 1}
           className="px-2.5 py-1.5 rounded-lg border border-gray-300 text-sm text-gray-600 disabled:opacity-30 hover:bg-gray-100"
           aria-label="上一章"
@@ -51,7 +51,7 @@ export default function BookNav() {
           ‹
         </button>
         <button
-          onClick={() => stepChapter(1)}
+          onClick={() => navigate(`/${activeBookId}/${activeChapter + 1}`)}
           disabled={activeChapter >= chapterCount}
           className="px-2.5 py-1.5 rounded-lg border border-gray-300 text-sm text-gray-600 disabled:opacity-30 hover:bg-gray-100"
           aria-label="下一章"
@@ -72,7 +72,7 @@ export default function BookNav() {
           return (
             <button
               key={`${a.bookId}-${a.chapter}`}
-              onClick={() => setLocation(a.bookId, a.chapter)}
+              onClick={() => navigate(`/${a.bookId}/${a.chapter}`)}
               className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${
                 isActive
                   ? 'bg-indigo-600 text-white'

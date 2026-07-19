@@ -249,7 +249,7 @@ export default function MapPanel() {
           </p>
         </div>
       )}
-      {!anno && <ChapterIllustration bookId={activeBookId} chapter={activeChapter} />}
+      {!anno && activeBookId && <ChapterIllustration bookId={activeBookId} chapter={activeChapter} />}
     </div>
   )
 }
